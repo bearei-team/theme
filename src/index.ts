@@ -1,3 +1,3 @@
-export * from './color';
+import core from './core';
 
-// export default ei;
+export default core;
