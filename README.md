@@ -1,6 +1,6 @@
 # Theme
 
-Provide some utility wrappers for fetch
+bear-ei project style theme
 
 ## Installation
 

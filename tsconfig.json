@@ -26,5 +26,5 @@
       "module": "commonjs"
     }
   },
-  "include": ["src"]
+ "include": ["src", "test"]
 }
