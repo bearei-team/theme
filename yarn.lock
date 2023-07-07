@@ -1379,7 +1379,6 @@ __metadata:
     "@babel/core": ^7.20.2
     "@babel/preset-env": ^7.20.2
     "@types/glob": ^8.0.0
-    "@types/isomorphic-fetch": ^0.0.36
     "@types/jest": ^29.2.2
     "@types/node": ^18.11.9
     "@types/webpack": ^5.28.0
@@ -2094,13 +2093,6 @@ __metadata:
   dependencies:
     "@types/node": "*"
   checksum: 38ef4f8c91c7a5b664cf6dd4d90de7863f88549a9f8ef997f2f1184e4f8cf2e7b9b63c04f0b7b962f34a09983073a31a9856de5aae5159b2ddbb905a4c44dc9f
-  languageName: node
-  linkType: hard
-
-"@types/isomorphic-fetch@npm:^0.0.36":
-  version: 0.0.36
-  resolution: "@types/isomorphic-fetch@npm:0.0.36"
-  checksum: 1ffaa1c97a019b1f7a682e2ae31bd4cc3f324198b422c62cece51b42d2750e0dde0c4df2320a52874d6c6019ee4b00ca2e736010d34b206a82e63ef82ef85bbe
   languageName: node
   linkType: hard
 
