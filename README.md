@@ -11,9 +11,10 @@ bear-ei project style theme
 ## Use
 
 ```typescript
-import ei from '@bearei/ei';
+import eiTheme from '@bearei/theme';
 
-await ei('https://bearei.com').then(result =>
-  console.info(result);
-);
+const theme = eiTheme();
+
+console.info(theme.color.gray.primary);
+console.info(theme.color.gray.colors[6]);
 ```
