@@ -398,39 +398,17 @@ const color = {
       ],
       primary: '#BFBFBF',
     },
-  },
-  neutral: {
-    title: {
-      black: 'rgba(0, 0, 0, 0.85)',
-      white: 'rgba(255, 255, 255, 0.85)',
-    },
-    primaryText: {
-      black: 'rgba(0, 0, 0, 0.65)',
-      white: 'rgba(255, 255, 255, 0.65)',
-    },
-    secondaryText: {
-      black: 'rgba(0, 0, 0, 0.45)',
-      white: 'rgba(255, 255, 255, 0.45)',
-    },
-    disable: {
-      black: 'rgba(0, 0, 0, 0.25)',
-      white: 'rgba(255, 255, 255, 0.30)',
-    },
-    border: {
-      black: 'rgba(0, 0, 0, 0.15)',
-      white: 'rgba(255, 255, 255, 0.20)',
-    },
-    dividers: {
-      black: 'rgba(0, 0, 0, 0.06)',
-      white: 'rgba(255, 255, 255, 0.12)',
-    },
-    background: {
-      black: 'rgba(0, 0, 0, 0.04)',
-      white: 'rgba(255, 255, 255, 0.08)',
-    },
-    tableHeader: {
-      black: 'rgba(0, 0, 0, 0.02)',
-      white: 'rgba(255, 255, 255, 0.04)',
+    black: {
+      colors: [
+        '#595959',
+        '#4D4D4D',
+        '#404040',
+        '#333333',
+        '#262626',
+        '#1A1A1A',
+        '#000000',
+      ],
+      primary: '#1A1A1A',
     },
   },
 };
