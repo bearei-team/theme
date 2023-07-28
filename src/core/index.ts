@@ -10,7 +10,7 @@ const theme = (colorScheme = 'light' as ColorSchemeType) => {
   const scheme = color[colorScheme];
 
   return {
-    color: { ...scheme, neutral: color.neutral },
+    color: scheme,
     font,
     shadow,
     spacing,
