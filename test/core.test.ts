@@ -1,16 +1,16 @@
-import * as border from '../src/border';
-import color from '../src/color';
-import theme from '../src/core';
-import font from '../src/font';
-import radius from '../src/radius';
-import shadow from '../src/shadow';
-import spacing from '../src/spacing';
+import * as border from '../src/border/border';
+import color from '../src/color/color';
+import theme from '../src/core/core';
+import font from '../src/font/font';
+import radius from '../src/radius/radius';
+import shadow from '../src/shadow/shadow';
+import spacing from '../src/spacing/spacing';
 
 describe('theme', () => {
   test('returns the correct theme object for light color scheme', () => {
     const colorScheme = 'light';
     const expectedTheme = {
-      color: { ...color[colorScheme] },
+      color: { ...color[colorScheme], primary: color[colorScheme]['black'] },
       font,
       shadow,
       spacing,
@@ -36,14 +36,14 @@ describe('theme', () => {
 
     jest.spyOn(border, 'default').mockReturnValue(mockBorder);
 
-    const result = theme(colorScheme);
+    const result = theme({ scheme: colorScheme });
     expect(result).toEqual(expectedTheme);
   });
 
   test('returns the correct theme object for dark color scheme', () => {
     const colorScheme = 'dark';
     const expectedTheme = {
-      color: { ...color[colorScheme] },
+      color: { ...color[colorScheme], primary: color[colorScheme]['black'] },
       font,
       shadow,
       spacing,
@@ -69,7 +69,7 @@ describe('theme', () => {
 
     jest.spyOn(border, 'default').mockReturnValue(mockBorder);
 
-    const result = theme(colorScheme);
+    const result = theme({ scheme: colorScheme });
     expect(result).toEqual(expectedTheme);
   });
 });
