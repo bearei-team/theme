@@ -1,5 +1,5 @@
 import type { Border } from '@/border/border.interfaces';
-import type color from '@/color/color';
+import type color from '../color/color';
 import type font from '../font/font';
 import type radius from '../radius/radius';
 import type shadow from '../shadow/shadow';
