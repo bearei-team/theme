@@ -1,4 +1,4 @@
-import type { Border } from '@/border/border.interfaces';
+import type { Border } from '../border/border.interfaces';
 import type color from '../color/color';
 import type font from '../font/font';
 import type radius from '../radius/radius';
@@ -19,4 +19,7 @@ export interface Theme {
   spacing: typeof spacing;
   radius: typeof radius;
   border: Border;
+  transition: {
+    all: string;
+  };
 }

@@ -23,6 +23,9 @@ describe('theme', () => {
         double: 'double',
         dashed: 'dashed',
       },
+      transition: {
+        all: 'all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1)',
+      },
     };
 
     const mockBorder = {
@@ -55,6 +58,9 @@ describe('theme', () => {
         solid: 'solid',
         double: 'double',
         dashed: 'dashed',
+      },
+      transition: {
+        all: 'all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1)',
       },
     };
 
