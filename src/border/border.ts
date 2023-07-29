@@ -1,4 +1,6 @@
-const border = (color: string) => ({
+import type { Border } from './border.interfaces';
+
+const border = (color: string): Border => ({
   width: 1,
   color,
   dotted: 'dotted',

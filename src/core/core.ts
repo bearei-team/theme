@@ -4,12 +4,10 @@ import font from '../font/font';
 import radius from '../radius/radius';
 import shadow from '../shadow/shadow';
 import spacing from '../spacing/spacing';
-import type { ThemeOption } from './core.interfaces';
+import type { Theme, ThemeOption } from './core.interfaces';
 
-const theme = ({
-  scheme = 'light',
-  color: primaryColor = 'black',
-}: ThemeOption) => {
+const theme = (option?: ThemeOption): Theme => {
+  const { scheme = 'light', color: primaryColor = 'black' } = option ?? {};
   const colorScheme = color[scheme];
 
   return {
