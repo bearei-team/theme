@@ -423,11 +423,6 @@ const color = {
       primary: '#1A1A1A',
     },
   },
-
-  primary: {
-    colors: [],
-    primary: '',
-  },
 };
 
 export default color;

@@ -10,7 +10,11 @@ describe('theme', () => {
   test('returns the correct theme object for light color scheme', () => {
     const colorScheme = 'light';
     const expectedTheme = {
-      color: { ...color[colorScheme], primary: color[colorScheme]['black'] },
+      color: {
+        ...color[colorScheme],
+        primary: color[colorScheme]['black'].primary,
+        colors: color[colorScheme]['black'].colors,
+      },
       font,
       shadow,
       spacing,
@@ -46,7 +50,11 @@ describe('theme', () => {
   test('returns the correct theme object for dark color scheme', () => {
     const colorScheme = 'dark';
     const expectedTheme = {
-      color: { ...color[colorScheme], primary: color[colorScheme]['black'] },
+      color: {
+        ...color[colorScheme],
+        primary: color[colorScheme]['black'].primary,
+        colors: color[colorScheme]['black'].colors,
+      },
       font,
       shadow,
       spacing,

@@ -12,7 +12,11 @@ const theme = (option?: ThemeOption): Theme => {
   const colorScheme = color[scheme];
 
   return {
-    color: { ...colorScheme, primary: colorScheme[primaryColor] },
+    color: {
+      ...colorScheme,
+      primary: colorScheme[primaryColor].primary,
+      colors: colorScheme[primaryColor].colors,
+    },
     font,
     shadow,
     spacing,

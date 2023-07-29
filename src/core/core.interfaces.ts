@@ -13,7 +13,7 @@ export interface ThemeOption {
 }
 
 export interface Theme {
-  color: Color & { primary: Color['black'] };
+  color: Color & { primary: string; colors: string[] };
   font: typeof font;
   shadow: typeof shadow;
   spacing: typeof spacing;
