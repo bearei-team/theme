@@ -1,6 +1,4 @@
-import core from './core/core';
+import {theme} from './core';
+export * from './core';
 
-export * from './border/border.interfaces';
-export * from './core/core.interfaces';
-
-export default core;
+export default theme;
