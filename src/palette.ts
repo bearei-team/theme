@@ -1,3 +1,5 @@
+import type {ThemeOptions} from './core';
+
 export interface Color {
     scrim: {
         /**
@@ -255,9 +257,8 @@ export interface Color {
     };
 }
 
-export interface PaletteOptions {
+export interface PaletteOptions extends Pick<ThemeOptions, 'scheme'> {
     color?: 'deepTeal';
-    scheme?: 'light' | 'dark';
 }
 
 export interface Palette {

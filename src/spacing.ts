@@ -1,7 +1,6 @@
 import type {Shape} from './shape';
 
 export type Spacing = Omit<Shape, 'full'>;
-
 export const SPACING = (): Spacing => ({
     none: 0,
     extraSmall: 4,
