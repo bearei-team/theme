@@ -3,9 +3,24 @@ import type {ThemeOptions} from './core';
 
 export interface Palette {
     primary: {
+        /**
+         * Primary base color
+         */
         primary: string;
+
+        /**
+         * On-primary is applied to content (icons, text, etc.) that sits on top of primary
+         */
         onPrimary: string;
+
+        /**
+         * Primary container is applied to elements needing less emphasis than primary
+         */
         primaryContainer: string;
+
+        /**
+         * On-primary container is applied to content (icons, text, etc.) that sits on top of primary container
+         */
         onPrimaryContainer: string;
         primaryFixed: string;
         primaryFixedDim: string;

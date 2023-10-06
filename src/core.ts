@@ -2,6 +2,7 @@ import {Color, COLOR} from './color';
 import {ELEVATION, Elevation} from './elevation';
 import {Font, FONT} from './font';
 import {Palette, PALETTE} from './palette';
+import {Shape, SHAPE} from './shape';
 import {TRANSITION} from './transition';
 import {Typography, TYPOGRAPHY} from './typography';
 
@@ -19,6 +20,7 @@ export interface Theme {
     transition: typeof TRANSITION;
     color: Color;
     palette: Palette;
+    shape: Shape;
 }
 
 export const THEME = (options?: ThemeOptions): Theme => {
@@ -32,5 +34,6 @@ export const THEME = (options?: ThemeOptions): Theme => {
         transition: TRANSITION,
         color: createdColor,
         palette: PALETTE(createdColor)({scheme}),
+        shape: SHAPE(),
     };
 };
