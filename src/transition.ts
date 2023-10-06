@@ -1,10 +1,20 @@
+import type {ThemeOptions} from './core';
+
+export type Easing = 'ease' | 'linear' | 'easeIn';
+export type Bezier =
+    | Easing
+    | {
+          x1: number;
+          y1: number;
+          x2: number;
+          y2: number;
+      };
+
 export interface TransitionOptions {
     property?: string;
     duration?: number;
     easing?:
-        | 'ease'
-        | 'linear'
-        | 'easeIn'
+        | Easing
         | 'emphasized' // Begin and end on screen
         | 'emphasizedDecelerate' // Enter the screen
         | 'emphasizedAccelerate' // Exit the screen
@@ -13,38 +23,54 @@ export interface TransitionOptions {
         | 'standardAccelerate'; // Exit the screen;
 }
 
-export const transition = ({
-    property = 'all',
-    duration,
-    easing = 'standard',
-}: TransitionOptions): string => {
-    const transitionDuration = {
-        ease: 300,
-        linear: 300,
-        easeIn: 300,
-        emphasized: 500,
-        emphasizedDecelerate: 400,
-        emphasizedAccelerate: 200,
-        standard: 300,
-        standardDecelerate: 250,
-        standardAccelerate: 200,
+export interface Transition {
+    bezier: Bezier;
+    duration: number;
+    web?: string;
+}
+
+const processBezier = (bezier: string | Bezier): string =>
+    typeof bezier === 'string'
+        ? bezier
+        : `cubic-bezier(${bezier.x1}, ${bezier.y1}, ${bezier.x2}, ${bezier.y2})`;
+
+export const CREATE_TRANSITION =
+    (os: ThemeOptions['os'] = 'web') =>
+    ({property = 'all', duration, easing = 'standard'}: TransitionOptions): Transition => {
+        const transitionDuration = {
+            ease: 300,
+            linear: 300,
+            easeIn: 300,
+            emphasized: 500,
+            emphasizedDecelerate: 400,
+            emphasizedAccelerate: 200,
+            standard: 300,
+            standardDecelerate: 250,
+            standardAccelerate: 200,
+        };
+
+        const transitionBezier = {
+            ease: 'ease',
+            linear: 'linear',
+            easeIn: 'ease-in',
+            emphasized: {x1: 0.2, y1: 0, x2: 0, y2: 1.0},
+            emphasizedDecelerate: {x1: 0.5, y1: 0.7, x2: 0.1, y2: 1.0},
+            emphasizedAccelerate: {x1: 0.3, y1: 0, x2: 0.8, y2: 0.15},
+            standard: {x1: 0.2, y1: 0, x2: 0.8, y2: 1.0},
+            standardDecelerate: {x1: 0, y1: 0, x2: 0, y2: 1},
+            standardAccelerate: {x1: 0.3, y1: 0, x2: 1, y2: 1},
+        };
+
+        const bezier = transitionBezier[easing] as Bezier;
+        const durationMillisecond =
+            typeof duration === 'number' ? duration : transitionDuration[easing];
+
+        return {
+            bezier,
+            duration: durationMillisecond,
+            web:
+                os === 'web'
+                    ? `${property} ${durationMillisecond / 1000}s ${processBezier(bezier)}`
+                    : undefined,
+        };
     };
-
-    const timingFunction = {
-        ease: 'ease',
-        linear: 'linear',
-        easeIn: 'ease-in',
-        emphasized: 'cubic-bezier(0.2, 0.0, 0, 1.0)',
-        emphasizedDecelerate: 'cubic-bezier(0.05, 0.7, 0.1, 1.0)',
-        emphasizedAccelerate: 'cubic-bezier(0.3, 0.0, 0.8, 0.15)',
-        standard: 'cubic-bezier(0.2, 0.0, 0, 1.0)',
-        standardDecelerate: 'cubic-bezier(0, 0, 0, 1)',
-        standardAccelerate: 'cubic-bezier(0.3, 0, 1, 1)',
-    };
-
-    const timing = timingFunction[easing];
-    const durationSeconds =
-        (typeof duration === 'number' ? duration : transitionDuration[easing]) / 1000;
-
-    return `${property} ${durationSeconds}s ${timing}`;
-};

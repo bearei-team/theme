@@ -1,4 +1,4 @@
-import {theme} from './core';
+import {THEME} from './core';
 export * from './core';
 
-export default theme;
+export const theme = THEME;
