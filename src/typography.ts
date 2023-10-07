@@ -69,7 +69,7 @@ export interface Typography {
     label: TypographyStyle;
 }
 
-const createTypography = (font: Font) => (): Typography => ({
+const typography = (font: Font) => (): Typography => ({
     display: {
         large: {
             weight: font.weight.regular,
@@ -174,4 +174,4 @@ const createTypography = (font: Font) => (): Typography => ({
     },
 });
 
-export const TYPOGRAPHY = createTypography(FONT());
+export const TYPOGRAPHY = typography(FONT());

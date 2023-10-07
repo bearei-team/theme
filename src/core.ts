@@ -30,11 +30,11 @@ export const THEME = (options?: ThemeOptions): Theme => {
     const createdColor = COLOR({color});
 
     return {
-        elevation: ELEVATION({scheme}),
         font: FONT(),
-        typography: TYPOGRAPHY(),
-        transition: TRANSITION,
         color: createdColor,
+        typography: TYPOGRAPHY(),
+        elevation: ELEVATION({scheme}),
+        transition: TRANSITION,
         palette: PALETTE(createdColor)({scheme}),
         shape: SHAPE(),
         spacing: SPACING(),

@@ -1,5 +1,10 @@
 export interface BorderRadius {
-    native: {topLeft: number; topRight: number; bottomRight: number; bottomLeft: number};
+    native: {
+        topLeft: number;
+        topRight: number;
+        bottomRight: number;
+        bottomLeft: number;
+    };
     web: string;
 }
 
