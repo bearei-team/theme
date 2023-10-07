@@ -1,3 +1,8 @@
-import core from './core';
+import {THEME} from './core';
+export * from './color';
+export * from './core';
+export * from './elevation';
+export * from './font';
+export * from './palette';
 
-export default core;
+export const theme = THEME;
