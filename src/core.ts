@@ -3,6 +3,7 @@ import {ELEVATION, Elevation} from './elevation';
 import {Font, FONT} from './font';
 import {Palette, PALETTE} from './palette';
 import {Shape, SHAPE} from './shape';
+import {SPACING, Spacing} from './spacing';
 import {TRANSITION} from './transition';
 import {Typography, TYPOGRAPHY} from './typography';
 
@@ -21,6 +22,7 @@ export interface Theme {
     color: Color;
     palette: Palette;
     shape: Shape;
+    spacing: Spacing;
 }
 
 export const THEME = (options?: ThemeOptions): Theme => {
@@ -35,5 +37,6 @@ export const THEME = (options?: ThemeOptions): Theme => {
         color: createdColor,
         palette: PALETTE(createdColor)({scheme}),
         shape: SHAPE(),
+        spacing: SPACING(),
     };
 };

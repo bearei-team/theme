@@ -1,6 +1,12 @@
-import type {Shape} from './shape';
+export interface Spacing {
+    none: number;
+    extraSmall: number;
+    small: number;
+    medium: number;
+    large: number;
+    extraLarge: number;
+}
 
-export type Spacing = Omit<Shape, 'full'>;
 export const SPACING = (): Spacing => ({
     none: 0,
     extraSmall: 4,
