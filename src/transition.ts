@@ -39,20 +39,11 @@ export interface TransitionOptions {
 }
 
 export interface Transition {
-    native: {
-        bezier: Bezier;
-        duration: number;
-    };
-    web?: string;
+    bezier: Bezier;
+    duration: number;
 }
 
-const processBezier = (bezier: string | Bezier): string =>
-    typeof bezier === 'string'
-        ? bezier
-        : `cubic-bezier(${bezier.x0}, ${bezier.y1}, ${bezier.x1}, ${bezier.y1})`;
-
 export const TRANSITION = ({
-    property = 'all',
     duration = 'medium1',
     easing = 'standard',
 }: TransitionOptions): Transition => {
@@ -142,8 +133,5 @@ export const TRANSITION = ({
     const durationMillisecond =
         typeof duration === 'number' ? duration : transitionDuration[duration];
 
-    return {
-        native: {bezier, duration: durationMillisecond},
-        web: `${property} ${durationMillisecond / 1000}s ${processBezier(bezier)}`,
-    };
+    return {bezier, duration: durationMillisecond};
 };
