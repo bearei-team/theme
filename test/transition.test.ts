@@ -3,9 +3,8 @@ import {TRANSITION} from '../src/transition';
 describe('transition', () => {
     it('should return transition object with correct properties for default values', () => {
         const transition = TRANSITION({});
-        expect(transition.native.bezier).toBeDefined();
-        expect(transition.native.duration).toBeDefined();
-        expect(transition.web).toBeDefined();
+        expect(transition.bezier).toBeDefined();
+        expect(transition.duration).toBeDefined();
     });
 
     it('should return transition object with correct properties for specified values', () => {
@@ -15,9 +14,8 @@ describe('transition', () => {
             easing: 'emphasized',
         });
 
-        expect(transition.native.bezier).toBeDefined();
-        expect(transition.native.duration).toBe(200);
-        expect(transition.web).toBe('opacity 0.2s cubic-bezier(0.2, 1, 0, 1)');
+        expect(transition.bezier).toBeDefined();
+        expect(transition.duration).toBe(200);
     });
 
     it('should return transition object with correct properties for legacy easing', () => {
@@ -25,9 +23,8 @@ describe('transition', () => {
             easing: 'legacy',
         });
 
-        expect(transition.native.bezier).toBeDefined();
-        expect(transition.native.duration).toBeDefined();
-        expect(transition.web).toBe('all 0.25s cubic-bezier(0.4, 1, 0.2, 1)');
+        expect(transition.bezier).toBeDefined();
+        expect(transition.duration).toBeDefined();
     });
 
     it('should handle numeric duration correctly', () => {
@@ -35,8 +32,7 @@ describe('transition', () => {
             duration: 500,
         });
 
-        expect(transition.native.bezier).toBeDefined();
-        expect(transition.native.duration).toBe(500);
-        expect(transition.web).toBe('all 0.5s cubic-bezier(0.2, 1, 0, 1)');
+        expect(transition.bezier).toBeDefined();
+        expect(transition.duration).toBe(500);
     });
 });

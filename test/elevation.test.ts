@@ -10,7 +10,7 @@ describe('elevation', () => {
         expect(elevation.level3).toEqual(expect.any(Object));
         expect(elevation.level4).toEqual(expect.any(Object));
         expect(elevation.level5).toEqual(expect.any(Object));
-        expect(elevation.level0.natives.length).toBe(2);
+        expect(elevation.level0.length).toBe(2);
     });
 
     it('should return dark elevation levels when scheme is dark', () => {
@@ -23,6 +23,6 @@ describe('elevation', () => {
         expect(elevation.level4).toEqual(expect.any(Object));
         expect(elevation.level5).toEqual(expect.any(Object));
 
-        expect(elevation.level0.natives.length).toBe(2);
+        expect(elevation.level0.length).toBe(2);
     });
 });

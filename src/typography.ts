@@ -5,6 +5,7 @@ export interface Style {
     size: number;
     lineHeight: number;
     letterSpacing: number;
+    style: string;
     prominent?: {weight: number};
 }
 
@@ -76,18 +77,21 @@ const typography = (font: Font) => (): Typography => ({
             size: font.size.size10,
             lineHeight: font.lineHeight.lineHeight9,
             letterSpacing: font.letterSpacing.letterSpacing0,
+            style: font.style.normal,
         },
         medium: {
             weight: font.weight.regular,
             size: font.size.size9,
             lineHeight: font.lineHeight.lineHeight8,
             letterSpacing: font.letterSpacing.letterSpacing1,
+            style: font.style.normal,
         },
         small: {
             weight: font.weight.regular,
             size: font.size.size8,
             lineHeight: font.lineHeight.lineHeight7,
             letterSpacing: font.letterSpacing.letterSpacing1,
+            style: font.style.normal,
         },
     },
     headline: {
@@ -96,18 +100,21 @@ const typography = (font: Font) => (): Typography => ({
             size: font.size.size7,
             lineHeight: font.lineHeight.lineHeight6,
             letterSpacing: font.letterSpacing.letterSpacing1,
+            style: font.style.normal,
         },
         medium: {
             weight: font.weight.regular,
             size: font.size.size6,
             lineHeight: font.lineHeight.lineHeight5,
             letterSpacing: font.letterSpacing.letterSpacing1,
+            style: font.style.normal,
         },
         small: {
             weight: font.weight.regular,
             size: font.size.size5,
             lineHeight: font.lineHeight.lineHeight4,
             letterSpacing: font.letterSpacing.letterSpacing1,
+            style: font.style.normal,
         },
     },
     title: {
@@ -116,18 +123,21 @@ const typography = (font: Font) => (): Typography => ({
             size: font.size.size4,
             lineHeight: font.lineHeight.lineHeight3,
             letterSpacing: font.letterSpacing.letterSpacing1,
+            style: font.style.normal,
         },
         medium: {
             weight: font.weight.medium,
             size: font.size.size3,
             lineHeight: font.lineHeight.lineHeight2,
             letterSpacing: font.letterSpacing.letterSpacing4,
+            style: font.style.normal,
         },
         small: {
             weight: font.weight.medium,
             size: font.size.size2,
             lineHeight: font.lineHeight.lineHeight1,
             letterSpacing: font.letterSpacing.letterSpacing3,
+            style: font.style.normal,
         },
     },
     body: {
@@ -136,18 +146,21 @@ const typography = (font: Font) => (): Typography => ({
             size: font.size.size3,
             lineHeight: font.lineHeight.lineHeight2,
             letterSpacing: font.letterSpacing.letterSpacing6,
+            style: font.style.normal,
         },
         medium: {
             weight: font.weight.regular,
             size: font.size.size2,
             lineHeight: font.lineHeight.lineHeight1,
             letterSpacing: font.letterSpacing.letterSpacing2,
+            style: font.style.normal,
         },
         small: {
             weight: font.weight.regular,
             size: font.size.size1,
             lineHeight: font.lineHeight.lineHeight0,
             letterSpacing: font.letterSpacing.letterSpacing5,
+            style: font.style.normal,
         },
     },
     label: {
@@ -157,6 +170,7 @@ const typography = (font: Font) => (): Typography => ({
             lineHeight: font.lineHeight.lineHeight1,
             letterSpacing: font.letterSpacing.letterSpacing3,
             prominent: {weight: font.weight.bold},
+            style: font.style.normal,
         },
         medium: {
             weight: font.weight.medium,
@@ -164,12 +178,14 @@ const typography = (font: Font) => (): Typography => ({
             lineHeight: font.lineHeight.lineHeight0,
             letterSpacing: font.letterSpacing.letterSpacing6,
             prominent: {weight: font.weight.bold},
+            style: font.style.normal,
         },
         small: {
             weight: font.weight.medium,
             size: font.size.size0,
             lineHeight: font.lineHeight.lineHeight0,
             letterSpacing: font.letterSpacing.letterSpacing6,
+            style: font.style.normal,
         },
     },
 });
