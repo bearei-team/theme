@@ -8,22 +8,22 @@ export type Bezier = {
 export interface TransitionOptions {
     property?: string;
     duration?:
+        | 'short0'
         | 'short1'
         | 'short2'
         | 'short3'
-        | 'short4'
+        | 'medium0'
         | 'medium1'
         | 'medium2'
         | 'medium3'
-        | 'medium4'
+        | 'long0'
         | 'long1'
         | 'long2'
         | 'long3'
-        | 'long4'
+        | 'extraLong0'
         | 'extraLong1'
         | 'extraLong2'
         | 'extraLong3'
-        | 'extraLong4'
         | number;
     easing?:
         | 'linear'
@@ -48,22 +48,22 @@ export const TRANSITION = ({
     easing = 'standard',
 }: TransitionOptions): Transition => {
     const transitionDuration = {
-        short1: 50,
-        short2: 100,
-        short3: 150,
-        short4: 200,
-        medium1: 250,
-        medium2: 300,
-        medium3: 350,
-        medium4: 400,
-        long1: 450,
-        long2: 500,
-        long3: 550,
-        long4: 600,
-        extraLong1: 700,
-        extraLong2: 800,
-        extraLong3: 900,
-        extraLong4: 1000,
+        short0: 50,
+        short1: 100,
+        short2: 150,
+        short3: 200,
+        medium0: 250,
+        medium1: 300,
+        medium2: 350,
+        medium3: 400,
+        long0: 450,
+        long1: 500,
+        long2: 550,
+        long3: 600,
+        extraLong0: 700,
+        extraLong1: 800,
+        extraLong2: 900,
+        extraLong3: 1000,
     };
 
     const transitionBezier = {
