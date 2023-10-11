@@ -1,6 +1,10 @@
 import type {ThemeOptions} from './core';
 
 export type ColorOptions = Required<Pick<ThemeOptions, 'color'>>;
+export interface transparentRPGAOptions {
+    color: string;
+    opacity?: number;
+}
 export interface Color {
     source: string;
     primary: Record<
@@ -109,9 +113,16 @@ export interface Color {
         | 'neutralVariant100',
         string
     >;
+    rgba: (options: transparentRPGAOptions) => string;
 }
 
 export const COLOR = ({color}: ColorOptions): Color => {
+    const transparentRPGA = ({color, opacity}: transparentRPGAOptions): string =>
+        `rgba(${parseInt(color.slice(1, 3), 16)}, ${parseInt(color.slice(3, 5), 16)}, ${parseInt(
+            color.slice(5, 7),
+            16,
+        )}, ${opacity})`;
+
     const themeColor = {
         lightTeal: {
             source: '#88C0D0',
@@ -218,5 +229,5 @@ export const COLOR = ({color}: ColorOptions): Color => {
         },
     };
 
-    return themeColor[color];
+    return {...themeColor[color], rgba: transparentRPGA};
 };
