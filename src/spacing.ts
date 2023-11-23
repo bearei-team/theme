@@ -1,17 +1,17 @@
 export interface Spacing {
-    none: number;
-    extraSmall: number;
-    small: number;
-    medium: number;
-    large: number;
     extraLarge: number;
+    extraSmall: number;
+    large: number;
+    medium: number;
+    none: number;
+    small: number;
 }
 
 export const SPACING = (): Spacing => ({
-    none: 0,
-    extraSmall: 4,
-    small: 8,
-    medium: 16,
-    large: 24,
     extraLarge: 32,
+    extraSmall: 4,
+    large: 24,
+    medium: 16,
+    none: 0,
+    small: 8,
 });

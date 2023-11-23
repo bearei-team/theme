@@ -8,35 +8,35 @@ import {TRANSITION} from './transition';
 import {Typography, TYPOGRAPHY} from './typography';
 
 export interface ThemeOptions {
-    scheme?: 'light' | 'dark';
-    family?: string;
     codeFamily?: string;
     color?: 'lightTeal';
+    family?: string;
+    scheme?: 'light' | 'dark';
 }
 
 export interface Theme {
+    color: Color;
     elevation: Elevation;
     font: Font;
-    typography: Typography;
-    transition: typeof TRANSITION;
-    color: Color;
     palette: Palette;
     shape: Shape;
     spacing: Spacing;
+    transition: typeof TRANSITION;
+    typography: Typography;
 }
 
 export const THEME = (options?: ThemeOptions): Theme => {
-    const {scheme = 'light', color = 'lightTeal'} = options ?? {};
+    const {color = 'lightTeal', scheme = 'light'} = options ?? {};
     const createdColor = COLOR({color});
 
     return {
-        font: FONT(),
         color: createdColor,
-        typography: TYPOGRAPHY(),
         elevation: ELEVATION({scheme}),
-        transition: TRANSITION,
+        font: FONT(),
         palette: PALETTE(createdColor)({scheme}),
         shape: SHAPE(),
         spacing: SPACING(),
+        transition: TRANSITION,
+        typography: TYPOGRAPHY(),
     };
 };

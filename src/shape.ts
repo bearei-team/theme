@@ -1,8 +1,8 @@
 export interface BorderRadius {
+    bottomLeft: number;
+    bottomRight: number;
     topLeft: number;
     topRight: number;
-    bottomRight: number;
-    bottomLeft: number;
 }
 
 export interface Shape {
@@ -85,75 +85,75 @@ export interface Shape {
 
 export const SHAPE = (): Shape => ({
     full: {
-        topLeft: 9999,
-        topRight: 9999,
-        bottomRight: 9999,
-        bottomLeft: 9999,
+        bottomLeft: 1024,
+        bottomRight: 1024,
+        topLeft: 1024,
+        topRight: 1024,
     },
     extraLarge: {
+        bottomLeft: 28,
+        bottomRight: 28,
         topLeft: 28,
         topRight: 28,
-        bottomRight: 28,
-        bottomLeft: 28,
     },
     extraLargeTop: {
+        bottomLeft: 0,
+        bottomRight: 0,
         topLeft: 28,
         topRight: 28,
-        bottomRight: 0,
-        bottomLeft: 0,
     },
     large: {
+        bottomLeft: 16,
+        bottomRight: 16,
         topLeft: 16,
         topRight: 16,
-        bottomRight: 16,
-        bottomLeft: 16,
     },
     largeTop: {
+        bottomLeft: 0,
+        bottomRight: 0,
         topLeft: 16,
         topRight: 16,
-        bottomRight: 0,
-        bottomLeft: 0,
     },
     largeStart: {
+        bottomLeft: 16,
+        bottomRight: 0,
         topLeft: 16,
         topRight: 0,
-        bottomRight: 0,
-        bottomLeft: 16,
     },
     largeEnd: {
+        bottomLeft: 0,
+        bottomRight: 16,
         topLeft: 0,
         topRight: 16,
-        bottomRight: 16,
-        bottomLeft: 0,
     },
     medium: {
+        bottomLeft: 12,
+        bottomRight: 12,
         topLeft: 12,
         topRight: 12,
-        bottomRight: 12,
-        bottomLeft: 12,
     },
     small: {
+        bottomLeft: 8,
+        bottomRight: 8,
         topLeft: 8,
         topRight: 8,
-        bottomRight: 8,
-        bottomLeft: 8,
     },
     extraSmall: {
+        bottomLeft: 4,
+        bottomRight: 4,
         topLeft: 4,
         topRight: 4,
-        bottomRight: 4,
-        bottomLeft: 4,
     },
     extraSmallTop: {
+        bottomLeft: 0,
+        bottomRight: 0,
         topLeft: 4,
         topRight: 4,
-        bottomRight: 0,
-        bottomLeft: 0,
     },
     none: {
+        bottomLeft: 0,
+        bottomRight: 0,
         topLeft: 0,
         topRight: 0,
-        bottomRight: 0,
-        bottomLeft: 0,
     },
 });
