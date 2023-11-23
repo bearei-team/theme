@@ -71,8 +71,7 @@
         "coverage": "yarn test --coverage",
         "lint": "eslint . --ext .jsx,.ts,.tsx",
         "fix": "yarn lint --fix",
-        "prepare": "yarn lint && yarn coverage && yarn build",
-        "publish": "yarn npm publish --access public"
+        "publish": "yarn lint && yarn coverage && yarn build && yarn npm publish --access public"
     },
     "engines": {
         "node": ">=16.0.0"
