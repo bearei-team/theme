@@ -1,4 +1,4 @@
-import type { ThemeOptions } from './core';
+import type {ThemeOptions} from './core';
 
 export type ElevationOptions = Required<Pick<ThemeOptions, 'scheme'>>;
 export interface Shadow {
