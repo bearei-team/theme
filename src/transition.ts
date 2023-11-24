@@ -1,7 +1,7 @@
 export type Bezier = {
     x0: number;
-    y0: number;
     x1: number;
+    y0: number;
     y1: number;
 };
 
@@ -43,7 +43,7 @@ export interface Transition {
     duration: number;
 }
 
-export const TRANSITION = ({
+export const transition = ({
     duration = 'medium1',
     easing = 'standard',
 }: TransitionOptions): Transition => {

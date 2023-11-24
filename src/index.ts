@@ -1,4 +1,3 @@
-import {THEME} from './core';
 export * from './color';
 export * from './core';
 export * from './elevation';
@@ -9,4 +8,3 @@ export * from './spacing';
 export * from './transition';
 export * from './typography';
 
-export const theme = THEME;

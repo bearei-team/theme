@@ -1,4 +1,4 @@
-import type {ThemeOptions} from './core';
+import type { ThemeOptions } from './core';
 
 export type ElevationOptions = Required<Pick<ThemeOptions, 'scheme'>>;
 export interface Shadow {
@@ -92,9 +92,9 @@ export interface Elevation {
     level5: Level;
 }
 
-export const ELEVATION = ({scheme}: ElevationOptions): Elevation => {
+export const elevation = ({scheme}: ElevationOptions): Elevation => {
     const elevation = {
-        light: {
+        dark: {
             level0: {
                 shadow0: {
                     blur: 0,
@@ -115,6 +115,14 @@ export const ELEVATION = ({scheme}: ElevationOptions): Elevation => {
             },
             level1: {
                 shadow0: {
+                    blur: 2,
+                    elevation: 2,
+                    opacity: 0.3,
+                    spread: 0,
+                    x: 0,
+                    y: 1,
+                },
+                shadow1: {
                     blur: 3,
                     elevation: 3,
                     opacity: 0.15,
@@ -122,7 +130,9 @@ export const ELEVATION = ({scheme}: ElevationOptions): Elevation => {
                     x: 0,
                     y: 1,
                 },
-                shadow1: {
+            },
+            level2: {
+                shadow0: {
                     blur: 2,
                     elevation: 2,
                     opacity: 0.3,
@@ -130,24 +140,13 @@ export const ELEVATION = ({scheme}: ElevationOptions): Elevation => {
                     x: 0,
                     y: 1,
                 },
-            },
-
-            level2: {
-                shadow0: {
+                shadow1: {
                     blur: 6,
                     elevation: 6,
                     opacity: 0.15,
                     spread: 2,
                     x: 0,
                     y: 2,
-                },
-                shadow1: {
-                    blur: 2,
-                    elevation: 2,
-                    opacity: 0.3,
-                    spread: 0,
-                    x: 0,
-                    y: 1,
                 },
             },
             level3: {
@@ -205,7 +204,7 @@ export const ELEVATION = ({scheme}: ElevationOptions): Elevation => {
                 },
             },
         },
-        dark: {
+        light: {
             level0: {
                 shadow0: {
                     blur: 0,
@@ -226,14 +225,6 @@ export const ELEVATION = ({scheme}: ElevationOptions): Elevation => {
             },
             level1: {
                 shadow0: {
-                    blur: 2,
-                    elevation: 2,
-                    opacity: 0.3,
-                    spread: 0,
-                    x: 0,
-                    y: 1,
-                },
-                shadow1: {
                     blur: 3,
                     elevation: 3,
                     opacity: 0.15,
@@ -241,9 +232,7 @@ export const ELEVATION = ({scheme}: ElevationOptions): Elevation => {
                     x: 0,
                     y: 1,
                 },
-            },
-            level2: {
-                shadow0: {
+                shadow1: {
                     blur: 2,
                     elevation: 2,
                     opacity: 0.3,
@@ -251,13 +240,24 @@ export const ELEVATION = ({scheme}: ElevationOptions): Elevation => {
                     x: 0,
                     y: 1,
                 },
-                shadow1: {
+            },
+
+            level2: {
+                shadow0: {
                     blur: 6,
                     elevation: 6,
                     opacity: 0.15,
                     spread: 2,
                     x: 0,
                     y: 2,
+                },
+                shadow1: {
+                    blur: 2,
+                    elevation: 2,
+                    opacity: 0.3,
+                    spread: 0,
+                    x: 0,
+                    y: 1,
                 },
             },
             level3: {

@@ -1,10 +1,10 @@
-import {THEME} from '../src/core'; // 替换为实际的文件路径
+import {theme} from '../src/core';
 
 describe('core', () => {
     it('should return the default theme with light scheme and lightTeal color', () => {
-        const theme = THEME();
+        const defaultTheme = theme();
 
-        expect(theme).toEqual({
+        expect(defaultTheme).toEqual({
             font: expect.any(Object),
             color: expect.any(Object),
             typography: expect.any(Object),
@@ -15,24 +15,24 @@ describe('core', () => {
             spacing: expect.any(Object),
         });
 
-        expect(theme.color).toEqual(expect.any(Object));
-        expect(theme.color.source).toEqual('#88C0D0');
+        expect(defaultTheme.color).toEqual(expect.any(Object));
+        expect(defaultTheme.color.source).toEqual('#88C0D0');
     });
 
     it('should return the theme with dark scheme and lightTeal color', () => {
-        const theme = THEME({scheme: 'dark'});
+        const darkTheme = theme({scheme: 'dark'});
 
-        expect(theme.elevation).toEqual(expect.any(Object));
-        expect(theme.color).toEqual(expect.any(Object));
-        expect(theme.color.source).toEqual('#88C0D0');
+        expect(darkTheme.elevation).toEqual(expect.any(Object));
+        expect(darkTheme.color).toEqual(expect.any(Object));
+        expect(darkTheme.color.source).toEqual('#88C0D0');
     });
 
     it('should return the theme with light scheme and custom color', () => {
-        const customColor = 'lightTeal';
-        const theme = THEME({color: customColor});
+        const lightTealColor = 'lightTeal';
+        const lightTheme = theme({color: lightTealColor});
 
-        expect(theme.elevation).toEqual(expect.any(Object));
-        expect(theme.color).toEqual(expect.any(Object));
-        expect(theme.color.source).toEqual('#88C0D0');
+        expect(lightTheme.elevation).toEqual(expect.any(Object));
+        expect(lightTheme.color).toEqual(expect.any(Object));
+        expect(lightTheme.color.source).toEqual('#88C0D0');
     });
 });

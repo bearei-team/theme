@@ -83,7 +83,7 @@ export interface Shape {
     none: BorderRadius;
 }
 
-export const SHAPE = (): Shape => ({
+export const shape = (): Shape => ({
     full: {
         bottomLeft: 1024,
         bottomRight: 1024,

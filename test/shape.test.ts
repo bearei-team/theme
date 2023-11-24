@@ -1,20 +1,20 @@
-import {SHAPE} from '../src/shape';
+import {shape} from '../src/shape';
 
 describe('SHAPE function', () => {
     it('should return default shape values', () => {
-        const shape = SHAPE();
+        const defaultShape = shape();
 
-        expect(shape.full).toEqual(expect.any(Object));
-        expect(shape.extraLarge).toEqual(expect.any(Object));
-        expect(shape.extraLargeTop).toEqual(expect.any(Object));
-        expect(shape.large).toEqual(expect.any(Object));
-        expect(shape.largeTop).toEqual(expect.any(Object));
-        expect(shape.largeStart).toEqual(expect.any(Object));
-        expect(shape.largeEnd).toEqual(expect.any(Object));
-        expect(shape.medium).toEqual(expect.any(Object));
-        expect(shape.small).toEqual(expect.any(Object));
-        expect(shape.extraSmall).toEqual(expect.any(Object));
-        expect(shape.extraSmallTop).toEqual(expect.any(Object));
-        expect(shape.none).toEqual(expect.any(Object));
+        expect(defaultShape.full).toEqual(expect.any(Object));
+        expect(defaultShape.extraLarge).toEqual(expect.any(Object));
+        expect(defaultShape.extraLargeTop).toEqual(expect.any(Object));
+        expect(defaultShape.large).toEqual(expect.any(Object));
+        expect(defaultShape.largeTop).toEqual(expect.any(Object));
+        expect(defaultShape.largeStart).toEqual(expect.any(Object));
+        expect(defaultShape.largeEnd).toEqual(expect.any(Object));
+        expect(defaultShape.medium).toEqual(expect.any(Object));
+        expect(defaultShape.small).toEqual(expect.any(Object));
+        expect(defaultShape.extraSmall).toEqual(expect.any(Object));
+        expect(defaultShape.extraSmallTop).toEqual(expect.any(Object));
+        expect(defaultShape.none).toEqual(expect.any(Object));
     });
 });

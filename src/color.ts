@@ -113,7 +113,7 @@ export interface Color {
 
 export type ColorOptions = Required<Pick<ThemeOptions, 'color'>>;
 
-export const COLOR = ({color}: ColorOptions): Color => {
+export const color = ({color}: ColorOptions): Color => {
     const transparentRGB = (color: string, opacity = 1) =>
         `rgba(${parseInt(color.slice(1, 3), 16)}, ${parseInt(color.slice(3, 5), 16)}, ${parseInt(
             color.slice(5, 7),
@@ -122,7 +122,6 @@ export const COLOR = ({color}: ColorOptions): Color => {
 
     const themeColor = {
         lightTeal: {
-            source: '#88C0D0',
             error: {
                 error0: '#000000',
                 error10: '#410002',
@@ -208,6 +207,7 @@ export const COLOR = ({color}: ColorOptions): Color => {
                 secondary98: '#F0FBFF',
                 secondary100: '#FFFFFF',
             },
+            source: '#88C0D0',
             tertiary: {
                 tertiary0: '#000000',
                 tertiary10: '#131937',

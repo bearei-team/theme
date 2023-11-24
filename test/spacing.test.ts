@@ -1,14 +1,14 @@
-import {SPACING} from '../src/spacing';
+import {spacing} from '../src/spacing';
 
 describe('spacing', () => {
     it('should return spacing values', () => {
-        const spacing = SPACING();
+        const defaultSpacing = spacing();
 
-        expect(spacing.none).toBe(0);
-        expect(spacing.extraSmall).toBe(4);
-        expect(spacing.small).toBe(8);
-        expect(spacing.medium).toBe(16);
-        expect(spacing.large).toBe(24);
-        expect(spacing.extraLarge).toBe(32);
+        expect(defaultSpacing.none).toBe(0);
+        expect(defaultSpacing.extraSmall).toBe(4);
+        expect(defaultSpacing.small).toBe(8);
+        expect(defaultSpacing.medium).toBe(16);
+        expect(defaultSpacing.large).toBe(24);
+        expect(defaultSpacing.extraLarge).toBe(32);
     });
 });

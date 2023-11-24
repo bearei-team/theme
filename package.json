@@ -1,6 +1,6 @@
 {
     "name": "@bearei/theme",
-    "version": "1.3.8",
+    "version": "1.3.9",
     "main": "./lib/commonjs/index",
     "module": "./lib/module/index",
     "types": "./lib/typescript/index.d.ts",

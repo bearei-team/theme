@@ -1,9 +1,9 @@
-import {COLOR} from '../src/color';
+import {color} from '../src/color';
 
 describe('color', () => {
     it('should return the correct color object based on input', () => {
-        const themeColor = COLOR({color: 'lightTeal'});
+        const lightTealColor = color({color: 'lightTeal'});
 
-        expect(themeColor).toEqual(expect.any(Object));
+        expect(lightTealColor).toEqual(expect.any(Object));
     });
 });

@@ -1,26 +1,26 @@
-import {COLOR} from '../src/color';
-import {PALETTE} from '../src/palette';
+import {color} from '../src/color';
+import {palette} from '../src/palette';
 
 describe('palette', () => {
     it('should return default palette values for light scheme without options', () => {
-        const color = COLOR({color: 'lightTeal'});
-        const palette = PALETTE(color)({scheme: 'light'});
+        const lightTealColor = color({color: 'lightTeal'});
+        const lightPalette = palette(lightTealColor)({scheme: 'light'});
 
-        expect(palette.primary).toEqual(expect.any(Object));
-        expect(palette.secondary).toEqual(expect.any(Object));
-        expect(palette.tertiary).toEqual(expect.any(Object));
-        expect(palette.surface).toEqual(expect.any(Object));
-        expect(palette.outline).toEqual(expect.any(Object));
-        expect(palette.error).toEqual(expect.any(Object));
-        expect(palette.inverse).toEqual(expect.any(Object));
-        expect(palette.scrim).toEqual(expect.any(Object));
-        expect(palette.shadow).toEqual(expect.any(Object));
+        expect(lightPalette.primary).toEqual(expect.any(Object));
+        expect(lightPalette.secondary).toEqual(expect.any(Object));
+        expect(lightPalette.tertiary).toEqual(expect.any(Object));
+        expect(lightPalette.surface).toEqual(expect.any(Object));
+        expect(lightPalette.outline).toEqual(expect.any(Object));
+        expect(lightPalette.error).toEqual(expect.any(Object));
+        expect(lightPalette.inverse).toEqual(expect.any(Object));
+        expect(lightPalette.scrim).toEqual(expect.any(Object));
+        expect(lightPalette.shadow).toEqual(expect.any(Object));
     });
 
     it('should return palette values for dark scheme with default color options', () => {
-        const color = COLOR({color: 'lightTeal'});
-        const palette = PALETTE(color)({scheme: 'dark'});
+        const lightTealColor = color({color: 'lightTeal'});
+        const darkPalette = palette(lightTealColor)({scheme: 'dark'});
 
-        expect(palette.primary.primary).toEqual(color.primary.primary80);
+        expect(darkPalette.primary.primary).toEqual(lightTealColor.primary.primary80);
     });
 });

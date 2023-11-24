@@ -1,25 +1,25 @@
-import {FONT} from '../src/font';
+import {font} from '../src/font';
 
 describe('font', () => {
     it('should return default font values without options', () => {
-        const font = FONT();
+        const defaultFont = font();
 
-        expect(font.size).toEqual(expect.any(Object));
-        expect(font.lineHeight).toEqual(expect.any(Object));
-        expect(font.letterSpacing).toEqual(expect.any(Object));
-        expect(font.weight).toEqual(expect.any(Object));
-        expect(font.style).toEqual(expect.any(Object));
-        expect(font.family).toEqual(expect.any(String));
-        expect(font.codeFamily).toEqual(expect.any(String));
+        expect(defaultFont.size).toEqual(expect.any(Object));
+        expect(defaultFont.lineHeight).toEqual(expect.any(Object));
+        expect(defaultFont.letterSpacing).toEqual(expect.any(Object));
+        expect(defaultFont.weight).toEqual(expect.any(Object));
+        expect(defaultFont.style).toEqual(expect.any(Object));
+        expect(defaultFont.family).toEqual(expect.any(String));
+        expect(defaultFont.codeFamily).toEqual(expect.any(String));
     });
 
     it('should return font values with custom family and codeFamily options', () => {
         const customFamily = 'Custom Font, sans-serif';
         const customCodeFamily = 'Custom Code Font, monospace';
-        const font = FONT({family: customFamily, codeFamily: customCodeFamily});
+        const customFont = font({family: customFamily, codeFamily: customCodeFamily});
 
-        expect(font.family).toEqual(customFamily);
-        expect(font.codeFamily).toEqual(customCodeFamily);
+        expect(customFont.family).toEqual(customFamily);
+        expect(customFont.codeFamily).toEqual(customCodeFamily);
     });
 
     it('should return font values with custom options', () => {
@@ -28,9 +28,9 @@ describe('font', () => {
             codeFamily: 'Custom Code Font, monospace',
         };
 
-        const font = FONT(customOptions);
+        const customFont = font(customOptions);
 
-        expect(font.family).toEqual(customOptions.family);
-        expect(font.codeFamily).toEqual(customOptions.codeFamily);
+        expect(customFont.family).toEqual(customOptions.family);
+        expect(customFont.codeFamily).toEqual(customOptions.codeFamily);
     });
 });

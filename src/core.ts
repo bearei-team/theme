@@ -1,11 +1,11 @@
-import {Color, COLOR} from './color';
-import {ELEVATION, Elevation} from './elevation';
-import {Font, FONT} from './font';
-import {Palette, PALETTE} from './palette';
-import {Shape, SHAPE} from './shape';
-import {SPACING, Spacing} from './spacing';
-import {TRANSITION} from './transition';
-import {Typography, TYPOGRAPHY} from './typography';
+import {Color, color as themeColor} from './color';
+import {elevation, Elevation} from './elevation';
+import {Font, font} from './font';
+import {palette, Palette} from './palette';
+import {Shape, shape} from './shape';
+import {spacing, Spacing} from './spacing';
+import {transition} from './transition';
+import {Typography, typography} from './typography';
 
 export interface ThemeOptions {
     codeFamily?: string;
@@ -21,22 +21,22 @@ export interface Theme {
     palette: Palette;
     shape: Shape;
     spacing: Spacing;
-    transition: typeof TRANSITION;
+    transition: typeof transition;
     typography: Typography;
 }
 
-export const THEME = (options?: ThemeOptions): Theme => {
+export const theme = (options?: ThemeOptions): Theme => {
     const {color = 'lightTeal', scheme = 'light'} = options ?? {};
-    const createdColor = COLOR({color});
+    const createdColor = themeColor({color});
 
     return {
         color: createdColor,
-        elevation: ELEVATION({scheme}),
-        font: FONT(),
-        palette: PALETTE(createdColor)({scheme}),
-        shape: SHAPE(),
-        spacing: SPACING(),
-        transition: TRANSITION,
-        typography: TYPOGRAPHY(),
+        elevation: elevation({scheme}),
+        font: font(),
+        palette: palette(createdColor)({scheme}),
+        shape: shape(),
+        spacing: spacing(),
+        transition: transition,
+        typography: typography(),
     };
 };

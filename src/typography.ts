@@ -1,4 +1,4 @@
-import {FONT, Font} from './font';
+import {font, Font} from './font';
 
 export interface Style {
     letterSpacing: number;
@@ -70,7 +70,7 @@ export interface Typography {
     label: TypographyStyle;
 }
 
-const typography = (font: Font) => (): Typography => ({
+const baseTypography = (font: Font) => (): Typography => ({
     display: {
         large: {
             letterSpacing: font.letterSpacing.letterSpacing0,
@@ -190,4 +190,4 @@ const typography = (font: Font) => (): Typography => ({
     },
 });
 
-export const TYPOGRAPHY = typography(FONT());
+export const typography = baseTypography(font());

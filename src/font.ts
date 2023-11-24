@@ -45,7 +45,7 @@ export interface Font {
     weight: {bold: number; medium: number; regular: number};
 }
 
-export const FONT = ({family, codeFamily}: FontOptions = {}): Font => ({
+export const font = ({family, codeFamily}: FontOptions = {}): Font => ({
     codeFamily:
         codeFamily ??
         `Zed Mono, source-code-pro, Menlo, Monaco, Consolas,
