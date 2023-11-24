@@ -1,6 +1,6 @@
-import {Color, color as themeColor} from './color';
+import {Color, color as processColor} from './color';
 import {elevation, Elevation} from './elevation';
-import {Font, font} from './font';
+import {Font, font as processFont} from './font';
 import {palette, Palette} from './palette';
 import {Shape, shape} from './shape';
 import {spacing, Spacing} from './spacing';
@@ -27,16 +27,17 @@ export interface Theme {
 
 export const theme = (options?: ThemeOptions): Theme => {
     const {color = 'lightTeal', scheme = 'light'} = options ?? {};
-    const createdColor = themeColor({color});
+    const createdColor = processColor({color});
+    const font = processFont();
 
     return {
         color: createdColor,
         elevation: elevation({scheme}),
-        font: font(),
+        font,
         palette: palette(createdColor)({scheme}),
         shape: shape(),
         spacing: spacing(),
         transition: transition,
-        typography: typography(),
+        typography: typography(font),
     };
 };
