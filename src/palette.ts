@@ -85,7 +85,8 @@ export interface Palette {
 export type PaletteOptions = Required<Pick<ThemeOptions, 'scheme'>>;
 export const palette =
     (color: Color) =>
-    ({scheme}: PaletteOptions): Palette => {
+    (options: PaletteOptions): Palette => {
+        const {scheme} = options;
         const palette = {
             dark: {
                 primary: {

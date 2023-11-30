@@ -113,7 +113,9 @@ export interface Color {
 
 export type ColorOptions = Required<Pick<ThemeOptions, 'color'>>;
 
-export const color = ({color}: ColorOptions): Color => {
+export const color = (options: ColorOptions): Color => {
+    const {color} = options;
+
     const transparentRGB = (color: string, opacity = 1) =>
         `rgba(${parseInt(color.slice(1, 3), 16)}, ${parseInt(color.slice(3, 5), 16)}, ${parseInt(
             color.slice(5, 7),

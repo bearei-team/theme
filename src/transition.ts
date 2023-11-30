@@ -43,10 +43,8 @@ export interface Transition {
     duration: number;
 }
 
-export const transition = ({
-    duration = 'medium1',
-    easing = 'standard',
-}: TransitionOptions): Transition => {
+export const transition = (options: TransitionOptions): Transition => {
+    const {duration = 'medium1', easing = 'standard'} = options;
     const transitionDuration = {
         extraLong0: 700,
         extraLong1: 800,
