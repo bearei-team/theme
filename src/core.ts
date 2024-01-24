@@ -25,8 +25,7 @@ export interface Theme {
     typography: Typography;
 }
 
-export const theme = (options: ThemeOptions = {}): Theme => {
-    const {color = 'lightTeal', scheme = 'light'} = options;
+export const theme = ({color = 'lightTeal', scheme = 'light'}: ThemeOptions = {}): Theme => {
     const createdColor = processColor({color});
     const font = processFont();
 

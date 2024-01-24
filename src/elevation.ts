@@ -92,8 +92,7 @@ export interface Elevation {
     level5: Level;
 }
 
-export const elevation = (options: ElevationOptions): Elevation => {
-    const {scheme} = options;
+export const elevation = ({scheme}: ElevationOptions): Elevation => {
     const elevation = {
         dark: {
             level0: {
