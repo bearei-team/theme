@@ -1,8 +1,8 @@
-import {elevation} from '../src/elevation';
+import {createElevation} from '../src/elevation';
 
 describe('elevation', () => {
     it('should return light elevation levels by default', () => {
-        const lightElevation = elevation({scheme: 'light'});
+        const lightElevation = createElevation({scheme: 'light'});
 
         expect(lightElevation.level0).toEqual(expect.any(Object));
         expect(lightElevation.level1).toEqual(expect.any(Object));
@@ -13,7 +13,7 @@ describe('elevation', () => {
     });
 
     it('should return dark elevation levels when scheme is dark', () => {
-        const darkElevation = elevation({scheme: 'dark'});
+        const darkElevation = createElevation({scheme: 'dark'});
 
         expect(darkElevation.level0).toEqual(expect.any(Object));
         expect(darkElevation.level1).toEqual(expect.any(Object));

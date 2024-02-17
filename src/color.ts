@@ -105,20 +105,27 @@ export interface Color {
     neutral: Record<Neutral, string>;
     neutralVariant: Record<NeutralVariant, string>;
     primary: Record<Primary, string>;
-    rgba: (color: string, opacity: number) => string;
+    convertHexToRGBA: (color: string, opacity: number) => string;
     secondary: Record<Secondary, string>;
     source: string;
     tertiary: Record<Tertiary, string>;
 }
 
-export type ColorOptions = Required<Pick<ThemeOptions, 'color'>>;
-const transparentRGB = (color: string, opacity = 1) =>
-    `rgba(${parseInt(color.slice(1, 3), 16)}, ${parseInt(color.slice(3, 5), 16)}, ${parseInt(
-        color.slice(5, 7),
-        16,
-    )}, ${opacity})`;
+export type CreateColorOptions = Required<Pick<ThemeOptions, 'color'>>;
 
-export const color = ({color}: ColorOptions): Color => {
+const convertHexToRGBA = (color: string, opacity = 1) => {
+    if (!/^#([A-Fa-f0-9]{2}){3}$/.test(color)) {
+        throw new Error("Invalid color format. Expected '#RRGGBB'.");
+    }
+
+    const blue = parseInt(color.slice(5, 7), 16);
+    const green = parseInt(color.slice(3, 5), 16);
+    const red = parseInt(color.slice(1, 3), 16);
+
+    return `rgba(${red}, ${green}, ${blue}, ${opacity})`;
+};
+
+export const createColor = ({color}: CreateColorOptions): Color => {
     const themeColor = {
         lightTeal: {
             error: {
@@ -225,5 +232,5 @@ export const color = ({color}: ColorOptions): Color => {
         },
     };
 
-    return {...themeColor[color], rgba: transparentRGB};
+    return {...themeColor[color], convertHexToRGBA};
 };

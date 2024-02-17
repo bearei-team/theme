@@ -1,8 +1,8 @@
-import {font} from '../src/font';
+import {createFont} from '../src/font';
 
 describe('font', () => {
     it('should return default font values without options', () => {
-        const defaultFont = font();
+        const defaultFont = createFont();
 
         expect(defaultFont.size).toEqual(expect.any(Object));
         expect(defaultFont.lineHeight).toEqual(expect.any(Object));
@@ -16,7 +16,7 @@ describe('font', () => {
     it('should return font values with custom family and codeFamily options', () => {
         const customFamily = 'Custom Font, sans-serif';
         const customCodeFamily = 'Custom Code Font, monospace';
-        const customFont = font({family: customFamily, codeFamily: customCodeFamily});
+        const customFont = createFont({family: customFamily, codeFamily: customCodeFamily});
 
         expect(customFont.family).toEqual(customFamily);
         expect(customFont.codeFamily).toEqual(customCodeFamily);
@@ -28,7 +28,7 @@ describe('font', () => {
             codeFamily: 'Custom Code Font, monospace',
         };
 
-        const customFont = font(customOptions);
+        const customFont = createFont(customOptions);
 
         expect(customFont.family).toEqual(customOptions.family);
         expect(customFont.codeFamily).toEqual(customOptions.codeFamily);

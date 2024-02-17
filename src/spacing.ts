@@ -7,7 +7,7 @@ export interface Spacing {
     small: number;
 }
 
-export const spacing = (): Spacing => ({
+export const createSpacing = (): Spacing => ({
     extraLarge: 32,
     extraSmall: 4,
     large: 24,

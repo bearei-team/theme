@@ -1,6 +1,5 @@
 import type {ThemeOptions} from './core';
 
-export type FontOptions = Pick<ThemeOptions, 'family' | 'codeFamily'>;
 export type LetterSpacing =
     | 'letterSpacing0'
     | 'letterSpacing1'
@@ -45,13 +44,16 @@ export interface Font {
     weight: {bold: number; medium: number; regular: number};
 }
 
-export const font = ({family, codeFamily}: FontOptions = {}): Font => ({
+export type CreateFontOptions = Pick<ThemeOptions, 'family' | 'codeFamily'>;
+
+export const createFont = ({family, codeFamily}: CreateFontOptions = {}): Font => ({
     codeFamily:
-        codeFamily ?? `Zed Mono, source-code-pro, Menlo, Monaco, Consolas,'Courier New', monospace`,
+        codeFamily ??
+        `Zed Mono, Zed Sans, source-code-pro, Menlo, Monaco, Consolas,'Courier New', monospace`,
 
     family:
         family ??
-        `Zed Mono, NotoSansSC, -apple-system, BlinkMacSystemFont,'Segoe UI', Roboto, 
+        `Zed Mono, Zed Sans, NotoSansSC, -apple-system, BlinkMacSystemFont,'Segoe UI', Roboto, 
         'Helvetica Neue', Arial, 'Noto Sans', sans-serif,'Apple Color Emoji', 'Segoe UI Emoji', 
         'Segoe UI Symbol', 'Noto Color Emoji'`,
     letterSpacing: {

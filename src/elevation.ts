@@ -1,6 +1,5 @@
 import type {ThemeOptions} from './core';
 
-export type ElevationOptions = Required<Pick<ThemeOptions, 'scheme'>>;
 export interface Shadow {
     blur: number;
     elevation: number;
@@ -11,7 +10,6 @@ export interface Shadow {
 }
 
 export type Level = Record<'shadow0' | 'shadow1', Shadow>;
-
 export interface Elevation {
     /**
      * level0
@@ -92,7 +90,9 @@ export interface Elevation {
     level5: Level;
 }
 
-export const elevation = ({scheme}: ElevationOptions): Elevation => {
+export type CreateElevationOptions = Required<Pick<ThemeOptions, 'scheme'>>;
+
+export const createElevation = ({scheme}: CreateElevationOptions): Elevation => {
     const elevation = {
         dark: {
             level0: {

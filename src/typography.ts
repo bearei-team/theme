@@ -70,7 +70,7 @@ export interface Typography {
     label: TypographyStyle;
 }
 
-export const typography = (font: Font): Typography => ({
+export const createTypography = (font: Font): Typography => ({
     display: {
         large: {
             letterSpacing: font.letterSpacing.letterSpacing0,

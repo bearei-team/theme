@@ -1,6 +1,6 @@
 {
     "name": "@bearei/theme",
-    "version": "1.3.12",
+    "version": "1.4.0",
     "main": "./lib/commonjs/index",
     "module": "./lib/module/index",
     "types": "./lib/typescript/index.d.ts",
@@ -76,8 +76,5 @@
     "engines": {
         "node": ">=16.0.0"
     },
-    "packageManager": "yarn@3.6.4",
-    "dependencies": {
-        "@bearei/theme": "^1.3.12"
-    }
+    "packageManager": "yarn@3.6.4"
 }

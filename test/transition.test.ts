@@ -1,15 +1,15 @@
-import {transition} from '../src/transition';
+import {createTransition} from '../src/transition';
 
 describe('transition', () => {
     it('should return transition object with correct properties for default values', () => {
-        const defaultTransition = transition({});
+        const defaultTransition = createTransition({});
 
         expect(defaultTransition.bezier).toBeDefined();
         expect(defaultTransition.duration).toBeDefined();
     });
 
     it('should return transition object with correct properties for specified values', () => {
-        const defaultTransition = transition({
+        const defaultTransition = createTransition({
             property: 'opacity',
             duration: 200,
             easing: 'emphasized',
@@ -20,7 +20,7 @@ describe('transition', () => {
     });
 
     it('should return transition object with correct properties for legacy easing', () => {
-        const defaultTransition = transition({
+        const defaultTransition = createTransition({
             easing: 'legacy',
         });
 
@@ -29,7 +29,7 @@ describe('transition', () => {
     });
 
     it('should handle numeric duration correctly', () => {
-        const defaultTransition = transition({
+        const defaultTransition = createTransition({
             duration: 500,
         });
 

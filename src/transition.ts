@@ -5,7 +5,12 @@ export type Bezier = {
     y1: number;
 };
 
-export interface TransitionOptions {
+export interface Transition {
+    bezier: Bezier;
+    duration: number;
+}
+
+export interface CreateTransitionOptions {
     property?: string;
     duration?:
         | 'short0'
@@ -38,15 +43,10 @@ export interface TransitionOptions {
         | 'legacyDecelerate';
 }
 
-export interface Transition {
-    bezier: Bezier;
-    duration: number;
-}
-
-export const transition = ({
+export const createTransition = ({
     duration = 'medium1',
     easing = 'standard',
-}: TransitionOptions): Transition => {
+}: CreateTransitionOptions): Transition => {
     const transitionDuration = {
         extraLong0: 700,
         extraLong1: 800,

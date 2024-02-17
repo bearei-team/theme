@@ -1,10 +1,10 @@
-import {color} from '../src/color';
-import {palette} from '../src/palette';
+import {createColor} from '../src/color';
+import {createPalette} from '../src/palette';
 
 describe('palette', () => {
     it('should return default palette values for light scheme without options', () => {
-        const lightTealColor = color({color: 'lightTeal'});
-        const lightPalette = palette(lightTealColor)({scheme: 'light'});
+        const lightTealColor = createColor({color: 'lightTeal'});
+        const lightPalette = createPalette(lightTealColor, {scheme: 'light'});
 
         expect(lightPalette.primary).toEqual(expect.any(Object));
         expect(lightPalette.secondary).toEqual(expect.any(Object));
@@ -18,8 +18,8 @@ describe('palette', () => {
     });
 
     it('should return palette values for dark scheme with default color options', () => {
-        const lightTealColor = color({color: 'lightTeal'});
-        const darkPalette = palette(lightTealColor)({scheme: 'dark'});
+        const lightTealColor = createColor({color: 'lightTeal'});
+        const darkPalette = createPalette(lightTealColor, {scheme: 'dark'});
 
         expect(darkPalette.primary.primary).toEqual(lightTealColor.primary.primary80);
     });

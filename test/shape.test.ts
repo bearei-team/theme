@@ -1,8 +1,8 @@
-import {shape} from '../src/shape';
+import {createShape} from '../src/shape';
 
 describe('SHAPE function', () => {
     it('should return default shape values', () => {
-        const defaultShape = shape();
+        const defaultShape = createShape();
 
         expect(defaultShape.full).toEqual(expect.any(Object));
         expect(defaultShape.extraLarge).toEqual(expect.any(Object));

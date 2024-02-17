@@ -1,8 +1,8 @@
-import {spacing} from '../src/spacing';
+import {createSpacing} from '../src/spacing';
 
 describe('spacing', () => {
     it('should return spacing values', () => {
-        const defaultSpacing = spacing();
+        const defaultSpacing = createSpacing();
 
         expect(defaultSpacing.none).toBe(0);
         expect(defaultSpacing.extraSmall).toBe(4);
