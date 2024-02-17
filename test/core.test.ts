@@ -9,7 +9,7 @@ describe('core', () => {
             color: expect.any(Object),
             typography: expect.any(Object),
             elevation: expect.any(Object),
-            transition: expect.any(Function),
+            createTransition: expect.any(Function),
             palette: expect.any(Object),
             shape: expect.any(Object),
             spacing: expect.any(Object),
