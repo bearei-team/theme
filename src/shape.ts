@@ -14,6 +14,7 @@ export interface Shape {
      *      - Standard menu
      *      - Text fields
      */
+    extraLargeBottom: BorderRadius;
     extraSmall: BorderRadius;
     extraSmallTop: BorderRadius;
 
@@ -101,6 +102,12 @@ export const createShape = (): Shape => ({
         bottomRight: 0,
         topLeft: 28,
         topRight: 28,
+    },
+    extraLargeBottom: {
+        bottomLeft: 28,
+        bottomRight: 28,
+        topLeft: 0,
+        topRight: 0,
     },
     large: {
         bottomLeft: 16,

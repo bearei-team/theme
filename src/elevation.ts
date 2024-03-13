@@ -91,7 +91,6 @@ export interface Elevation {
 }
 
 export type CreateElevationOptions = Required<Pick<ThemeOptions, 'scheme'>>;
-
 export const createElevation = ({scheme}: CreateElevationOptions): Elevation => {
     const elevation = {
         dark: {
