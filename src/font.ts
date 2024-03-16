@@ -1,6 +1,6 @@
 import type {ThemeOptions} from './core';
 
-export type LetterSpacing =
+type LetterSpacing =
     | 'letterSpacing0'
     | 'letterSpacing1'
     | 'letterSpacing2'
@@ -9,7 +9,7 @@ export type LetterSpacing =
     | 'letterSpacing5'
     | 'letterSpacing6';
 
-export type LineHeight =
+type LineHeight =
     | 'lineHeight0'
     | 'lineHeight1'
     | 'lineHeight2'
@@ -21,7 +21,7 @@ export type LineHeight =
     | 'lineHeight8'
     | 'lineHeight9';
 
-export type Size =
+type Size =
     | 'size0'
     | 'size1'
     | 'size2'
@@ -44,7 +44,7 @@ export interface Font {
     weight: {bold: number; medium: number; regular: number};
 }
 
-export type CreateFontOptions = Pick<ThemeOptions, 'family' | 'codeFamily'>;
+type CreateFontOptions = Pick<ThemeOptions, 'family' | 'codeFamily'>;
 
 export const createFont = ({family, codeFamily}: CreateFontOptions = {}): Font => ({
     codeFamily:

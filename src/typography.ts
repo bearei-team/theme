@@ -1,6 +1,6 @@
 import {Font} from './font';
 
-export interface Style {
+interface Style {
     letterSpacing: number;
     lineHeight: number;
     prominent?: {weight: number};
@@ -9,7 +9,7 @@ export interface Style {
     weight: number;
 }
 
-export interface TypographyStyle {
+interface TypographyStyle {
     large: Style;
     medium: Style;
     small: Style;

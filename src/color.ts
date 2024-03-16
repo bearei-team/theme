@@ -1,6 +1,6 @@
 import {ThemeOptions} from './core';
 
-export type Primary =
+type Primary =
     | 'primary0'
     | 'primary10'
     | 'primary20'
@@ -15,7 +15,7 @@ export type Primary =
     | 'primary98'
     | 'primary100';
 
-export type Secondary =
+type Secondary =
     | 'secondary0'
     | 'secondary10'
     | 'secondary20'
@@ -30,7 +30,7 @@ export type Secondary =
     | 'secondary98'
     | 'secondary100';
 
-export type Tertiary =
+type Tertiary =
     | 'tertiary0'
     | 'tertiary10'
     | 'tertiary20'
@@ -45,7 +45,7 @@ export type Tertiary =
     | 'tertiary98'
     | 'tertiary100';
 
-export type Error =
+type Error =
     | 'error0'
     | 'error10'
     | 'error20'
@@ -60,7 +60,7 @@ export type Error =
     | 'error98'
     | 'error100';
 
-export type Neutral =
+type Neutral =
     | 'neutral0'
     | 'neutral4'
     | 'neutral6'
@@ -85,7 +85,7 @@ export type Neutral =
     | 'neutral98'
     | 'neutral100';
 
-export type NeutralVariant =
+type NeutralVariant =
     | 'neutralVariant0'
     | 'neutralVariant10'
     | 'neutralVariant20'
@@ -100,18 +100,17 @@ export type NeutralVariant =
     | 'neutralVariant98'
     | 'neutralVariant100';
 
+type CreateColorOptions = Required<Pick<ThemeOptions, 'color'>>;
 export interface Color {
+    convertHexToRGBA: (color: string, opacity: number) => string;
     error: Record<Error, string>;
     neutral: Record<Neutral, string>;
     neutralVariant: Record<NeutralVariant, string>;
     primary: Record<Primary, string>;
-    convertHexToRGBA: (color: string, opacity: number) => string;
     secondary: Record<Secondary, string>;
     source: string;
     tertiary: Record<Tertiary, string>;
 }
-
-export type CreateColorOptions = Required<Pick<ThemeOptions, 'color'>>;
 
 const convertHexToRGBA = (color: string, opacity = 1) => {
     if (!/^#([A-Fa-f0-9]{2}){3}$/.test(color)) {

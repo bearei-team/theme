@@ -1,4 +1,4 @@
-export interface BorderRadius {
+interface BorderRadius {
     bottomLeft: number;
     bottomRight: number;
     topLeft: number;

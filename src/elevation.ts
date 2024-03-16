@@ -1,6 +1,6 @@
 import type {ThemeOptions} from './core';
 
-export interface Shadow {
+interface Shadow {
     blur: number;
     elevation: number;
     opacity: number;
@@ -9,7 +9,7 @@ export interface Shadow {
     y: number;
 }
 
-export type Level = Record<'shadow0' | 'shadow1', Shadow>;
+type Level = Record<'shadow0' | 'shadow1', Shadow>;
 export interface Elevation {
     /**
      * level0

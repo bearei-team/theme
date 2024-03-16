@@ -1,6 +1,7 @@
 import type {Color} from './color';
 import type {ThemeOptions} from './core';
 
+type CreatePaletteOptions = Required<Pick<ThemeOptions, 'scheme'>>;
 export interface Palette {
     primary: {
         /**
@@ -81,8 +82,6 @@ export interface Palette {
         shadow: string;
     };
 }
-
-export type CreatePaletteOptions = Required<Pick<ThemeOptions, 'scheme'>>;
 
 export const createPalette = (color: Color, {scheme}: CreatePaletteOptions): Palette => {
     const palette = {

@@ -31,12 +31,12 @@ export const theme = ({color = 'lightTeal', scheme = 'light'}: ThemeOptions = {}
 
     return {
         color: createdColor,
+        createTransition,
         elevation: createElevation({scheme}),
         font,
         palette: createPalette(createdColor, {scheme}),
         shape: createShape(),
         spacing: createSpacing(),
-        createTransition,
         typography: createTypography(font),
     };
 };

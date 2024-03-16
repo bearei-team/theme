@@ -1,16 +1,11 @@
-export type Bezier = {
+type Bezier = {
     x0: number;
     x1: number;
     y0: number;
     y1: number;
 };
 
-export interface Transition {
-    bezier: Bezier;
-    duration: number;
-}
-
-export interface CreateTransitionOptions {
+interface CreateTransitionOptions {
     property?: string;
     duration?:
         | 'short0'
@@ -41,6 +36,11 @@ export interface CreateTransitionOptions {
         | 'legacy'
         | 'legacyAccelerate'
         | 'legacyDecelerate';
+}
+
+export interface Transition {
+    bezier: Bezier;
+    duration: number;
 }
 
 export const createTransition = ({
