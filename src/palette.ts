@@ -15,7 +15,8 @@ export interface Palette {
         onPrimary: string;
 
         /**
-         * On-primary container is applied to content (icons, text, etc.) that sits on top of primary container
+         * On-primary container is applied to content (icons, text, etc.) that sits on top of
+         * primary container
          */
         onPrimaryContainer: string;
         onPrimaryFixed: string;

@@ -16,12 +16,12 @@ export interface ThemeOptions {
 
 export interface Theme {
     color: Color;
+    createTransition: typeof createTransition;
     elevation: Elevation;
     font: Font;
     palette: Palette;
     shape: Shape;
     spacing: Spacing;
-    createTransition: typeof createTransition;
     typography: Typography;
 }
 
