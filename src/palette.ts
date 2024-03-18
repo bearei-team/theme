@@ -1,7 +1,7 @@
 import type {Color} from './color';
 import type {ThemeOptions} from './core';
 
-type CreatePaletteOptions = Required<Pick<ThemeOptions, 'scheme'>>;
+export type CreatePaletteOptions = Required<Pick<ThemeOptions, 'scheme'>>;
 export interface Palette {
     primary: {
         /**

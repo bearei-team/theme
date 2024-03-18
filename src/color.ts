@@ -100,7 +100,7 @@ type NeutralVariant =
     | 'neutralVariant98'
     | 'neutralVariant100';
 
-type CreateColorOptions = Required<Pick<ThemeOptions, 'color'>>;
+export type CreateColorOptions = Required<Pick<ThemeOptions, 'color'>>;
 export interface Color {
     convertHexToRGBA: (color: string, opacity: number) => string;
     error: Record<Error, string>;

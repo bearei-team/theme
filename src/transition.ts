@@ -5,7 +5,7 @@ type Bezier = {
     y1: number;
 };
 
-interface CreateTransitionOptions {
+export interface CreateTransitionOptions {
     property?: string;
     duration?:
         | 'short0'

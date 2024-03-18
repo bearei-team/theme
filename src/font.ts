@@ -44,8 +44,7 @@ export interface Font {
     weight: {bold: number; medium: number; regular: number};
 }
 
-type CreateFontOptions = Pick<ThemeOptions, 'family' | 'codeFamily'>;
-
+export type CreateFontOptions = Pick<ThemeOptions, 'family' | 'codeFamily'>;
 export const createFont = ({family, codeFamily}: CreateFontOptions = {}): Font => ({
     codeFamily:
         codeFamily ??
