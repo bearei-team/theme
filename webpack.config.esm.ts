@@ -1,5 +1,5 @@
-import * as path from 'path';
-import type * as webpack from 'webpack';
+import * as path from 'path'
+import type * as webpack from 'webpack'
 
 export const config: webpack.Configuration = {
     output: {
@@ -8,12 +8,12 @@ export const config: webpack.Configuration = {
         publicPath: './lib/module',
         library: {type: 'module'},
         environment: {
-            module: true,
-        },
+            module: true
+        }
     },
     experiments: {
-        outputModule: true,
+        outputModule: true
     },
     externalsType: 'module',
-    externals: {},
-};
+    externals: {}
+}

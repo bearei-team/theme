@@ -1,18 +1,18 @@
-import {Font} from './font';
+import {Font} from './font'
 
 interface Style {
-    letterSpacing: number;
-    lineHeight: number;
-    prominent?: {weight: number};
-    size: number;
-    style: string;
-    weight: number;
+    letterSpacing: number
+    lineHeight: number
+    prominent?: {weight: number}
+    size: number
+    style: string
+    weight: number
 }
 
 interface TypographyStyle {
-    large: Style;
-    medium: Style;
-    small: Style;
+    large: Style
+    medium: Style
+    small: Style
 }
 
 export interface Typography {
@@ -28,7 +28,7 @@ export interface Typography {
      *
      * If available, set the appropriate optical size to your usage.
      */
-    display: TypographyStyle;
+    display: TypographyStyle
 
     /**
      * Headline
@@ -40,7 +40,7 @@ export interface Typography {
      * Headlines can also make use of expressive typefaces, provided that appropriate line height
      * and letter spacing is also integrated to maintain readability.
      */
-    headline: TypographyStyle;
+    headline: TypographyStyle
 
     /**
      * Title
@@ -52,7 +52,7 @@ export interface Typography {
      * For titles, use caution when using expressive fonts, including display, handwritten, and
      * script styles.
      */
-    title: TypographyStyle;
+    title: TypographyStyle
 
     /**
      * Body
@@ -65,7 +65,7 @@ export interface Typography {
      * Avoid expressive or decorative fonts for body text because these can be harder to read at
      * small sizes.
      */
-    body: TypographyStyle;
+    body: TypographyStyle
 
     /**
      * Label
@@ -75,7 +75,7 @@ export interface Typography {
      *
      * Buttons, for example, use the label large font.
      */
-    label: TypographyStyle;
+    label: TypographyStyle
 }
 
 export const createTypography = (font: Font): Typography => ({
@@ -85,22 +85,22 @@ export const createTypography = (font: Font): Typography => ({
             lineHeight: font.lineHeight.lineHeight9,
             size: font.size.size10,
             style: font.style.normal,
-            weight: font.weight.regular,
+            weight: font.weight.regular
         },
         medium: {
             letterSpacing: font.letterSpacing.letterSpacing1,
             lineHeight: font.lineHeight.lineHeight8,
             size: font.size.size9,
             style: font.style.normal,
-            weight: font.weight.regular,
+            weight: font.weight.regular
         },
         small: {
             letterSpacing: font.letterSpacing.letterSpacing1,
             lineHeight: font.lineHeight.lineHeight7,
             size: font.size.size8,
             style: font.style.normal,
-            weight: font.weight.regular,
-        },
+            weight: font.weight.regular
+        }
     },
     headline: {
         large: {
@@ -108,22 +108,22 @@ export const createTypography = (font: Font): Typography => ({
             lineHeight: font.lineHeight.lineHeight6,
             size: font.size.size7,
             style: font.style.normal,
-            weight: font.weight.regular,
+            weight: font.weight.regular
         },
         medium: {
             letterSpacing: font.letterSpacing.letterSpacing1,
             lineHeight: font.lineHeight.lineHeight5,
             size: font.size.size6,
             style: font.style.normal,
-            weight: font.weight.regular,
+            weight: font.weight.regular
         },
         small: {
             letterSpacing: font.letterSpacing.letterSpacing1,
             lineHeight: font.lineHeight.lineHeight4,
             size: font.size.size5,
             style: font.style.normal,
-            weight: font.weight.regular,
-        },
+            weight: font.weight.regular
+        }
     },
     title: {
         large: {
@@ -131,22 +131,22 @@ export const createTypography = (font: Font): Typography => ({
             lineHeight: font.lineHeight.lineHeight3,
             size: font.size.size4,
             style: font.style.normal,
-            weight: font.weight.regular,
+            weight: font.weight.regular
         },
         medium: {
             letterSpacing: font.letterSpacing.letterSpacing4,
             lineHeight: font.lineHeight.lineHeight2,
             size: font.size.size3,
             style: font.style.normal,
-            weight: font.weight.medium,
+            weight: font.weight.medium
         },
         small: {
             letterSpacing: font.letterSpacing.letterSpacing3,
             lineHeight: font.lineHeight.lineHeight1,
             size: font.size.size2,
             style: font.style.normal,
-            weight: font.weight.medium,
-        },
+            weight: font.weight.medium
+        }
     },
     body: {
         large: {
@@ -154,22 +154,22 @@ export const createTypography = (font: Font): Typography => ({
             lineHeight: font.lineHeight.lineHeight2,
             size: font.size.size3,
             style: font.style.normal,
-            weight: font.weight.regular,
+            weight: font.weight.regular
         },
         medium: {
             letterSpacing: font.letterSpacing.letterSpacing2,
             lineHeight: font.lineHeight.lineHeight1,
             size: font.size.size2,
             style: font.style.normal,
-            weight: font.weight.regular,
+            weight: font.weight.regular
         },
         small: {
             letterSpacing: font.letterSpacing.letterSpacing5,
             lineHeight: font.lineHeight.lineHeight0,
             size: font.size.size1,
             style: font.style.normal,
-            weight: font.weight.regular,
-        },
+            weight: font.weight.regular
+        }
     },
     label: {
         large: {
@@ -178,7 +178,7 @@ export const createTypography = (font: Font): Typography => ({
             prominent: {weight: font.weight.bold},
             size: font.size.size2,
             style: font.style.normal,
-            weight: font.weight.medium,
+            weight: font.weight.medium
         },
         medium: {
             letterSpacing: font.letterSpacing.letterSpacing6,
@@ -186,14 +186,14 @@ export const createTypography = (font: Font): Typography => ({
             prominent: {weight: font.weight.bold},
             size: font.size.size1,
             style: font.style.normal,
-            weight: font.weight.medium,
+            weight: font.weight.medium
         },
         small: {
             letterSpacing: font.letterSpacing.letterSpacing6,
             lineHeight: font.lineHeight.lineHeight0,
             size: font.size.size0,
             style: font.style.normal,
-            weight: font.weight.medium,
-        },
-    },
-});
+            weight: font.weight.medium
+        }
+    }
+})

@@ -1,4 +1,4 @@
-import type {ThemeOptions} from './core';
+import type {ThemeOptions} from './core'
 
 type LetterSpacing =
     | 'letterSpacing0'
@@ -7,7 +7,7 @@ type LetterSpacing =
     | 'letterSpacing3'
     | 'letterSpacing4'
     | 'letterSpacing5'
-    | 'letterSpacing6';
+    | 'letterSpacing6'
 
 type LineHeight =
     | 'lineHeight0'
@@ -19,7 +19,7 @@ type LineHeight =
     | 'lineHeight6'
     | 'lineHeight7'
     | 'lineHeight8'
-    | 'lineHeight9';
+    | 'lineHeight9'
 
 type Size =
     | 'size0'
@@ -32,20 +32,23 @@ type Size =
     | 'size7'
     | 'size8'
     | 'size9'
-    | 'size10';
+    | 'size10'
 
 export interface Font {
-    codeFamily: string;
-    family: string;
-    letterSpacing: Record<LetterSpacing, number>;
-    lineHeight: Record<LineHeight, number>;
-    size: Record<Size, number>;
-    style: {normal: string};
-    weight: {bold: number; medium: number; regular: number};
+    codeFamily: string
+    family: string
+    letterSpacing: Record<LetterSpacing, number>
+    lineHeight: Record<LineHeight, number>
+    size: Record<Size, number>
+    style: {normal: string}
+    weight: {bold: number; medium: number; regular: number}
 }
 
-export type CreateFontOptions = Pick<ThemeOptions, 'family' | 'codeFamily'>;
-export const createFont = ({family, codeFamily}: CreateFontOptions = {}): Font => ({
+export type CreateFontOptions = Pick<ThemeOptions, 'family' | 'codeFamily'>
+export const createFont = ({
+    family,
+    codeFamily
+}: CreateFontOptions = {}): Font => ({
     codeFamily:
         codeFamily ??
         `Zed Mono, Zed Sans, source-code-pro, Menlo, Monaco, Consolas,'Courier New', monospace`,
@@ -62,7 +65,7 @@ export const createFont = ({family, codeFamily}: CreateFontOptions = {}): Font =
         letterSpacing3: 0.1,
         letterSpacing4: 0.15,
         letterSpacing5: 0.4,
-        letterSpacing6: 0.5,
+        letterSpacing6: 0.5
     },
     lineHeight: {
         lineHeight0: 16,
@@ -74,7 +77,7 @@ export const createFont = ({family, codeFamily}: CreateFontOptions = {}): Font =
         lineHeight6: 40,
         lineHeight7: 44,
         lineHeight8: 52,
-        lineHeight9: 64,
+        lineHeight9: 64
     },
     size: {
         size0: 11,
@@ -87,12 +90,12 @@ export const createFont = ({family, codeFamily}: CreateFontOptions = {}): Font =
         size7: 32,
         size8: 36,
         size9: 45,
-        size10: 57,
+        size10: 57
     },
     style: {normal: 'normal'},
     weight: {
         bold: 700,
         medium: 500,
-        regular: 400,
-    },
-});
+        regular: 400
+    }
+})

@@ -1,8 +1,8 @@
 interface BorderRadius {
-    bottomLeft: number;
-    bottomRight: number;
-    topLeft: number;
-    topRight: number;
+    bottomLeft: number
+    bottomRight: number
+    topLeft: number
+    topRight: number
 }
 
 export interface Shape {
@@ -14,23 +14,23 @@ export interface Shape {
      *      - Standard menu
      *      - Text fields
      */
-    extraLargeBottom: BorderRadius;
-    extraSmall: BorderRadius;
-    extraSmallTop: BorderRadius;
+    extraLargeBottom: BorderRadius
+    extraSmall: BorderRadius
+    extraSmallTop: BorderRadius
 
     /**
      *  Small
      *      - Chips
      *      - Rich tooltip
      */
-    small: BorderRadius;
+    small: BorderRadius
 
     /**
      *  Medium
      *      - Cards
      *      - Small FABs
      */
-    medium: BorderRadius;
+    medium: BorderRadius
 
     /**
      *  Large
@@ -38,10 +38,10 @@ export interface Shape {
      *      - FABs
      *      - Navigation drawers
      */
-    large: BorderRadius;
-    largeTop: BorderRadius;
-    largeStart: BorderRadius;
-    largeEnd: BorderRadius;
+    large: BorderRadius
+    largeTop: BorderRadius
+    largeStart: BorderRadius
+    largeEnd: BorderRadius
 
     /**
      *  Extra large
@@ -53,8 +53,8 @@ export interface Shape {
      *      - Time picker
      *      - Time input
      */
-    extraLarge: BorderRadius;
-    extraLargeTop: BorderRadius;
+    extraLarge: BorderRadius
+    extraLargeTop: BorderRadius
 
     /**
      *  Full
@@ -65,7 +65,7 @@ export interface Shape {
      *      - Switches
      *      - Search bar
      */
-    full: BorderRadius;
+    full: BorderRadius
 
     /**
      *  None
@@ -81,7 +81,7 @@ export interface Shape {
      *      - Tabs
      *      - Top app bars
      */
-    none: BorderRadius;
+    none: BorderRadius
 }
 
 export const createShape = (): Shape => ({
@@ -89,78 +89,78 @@ export const createShape = (): Shape => ({
         bottomLeft: 1024,
         bottomRight: 1024,
         topLeft: 1024,
-        topRight: 1024,
+        topRight: 1024
     },
     extraLarge: {
         bottomLeft: 28,
         bottomRight: 28,
         topLeft: 28,
-        topRight: 28,
+        topRight: 28
     },
     extraLargeTop: {
         bottomLeft: 0,
         bottomRight: 0,
         topLeft: 28,
-        topRight: 28,
+        topRight: 28
     },
     extraLargeBottom: {
         bottomLeft: 28,
         bottomRight: 28,
         topLeft: 0,
-        topRight: 0,
+        topRight: 0
     },
     large: {
         bottomLeft: 16,
         bottomRight: 16,
         topLeft: 16,
-        topRight: 16,
+        topRight: 16
     },
     largeTop: {
         bottomLeft: 0,
         bottomRight: 0,
         topLeft: 16,
-        topRight: 16,
+        topRight: 16
     },
     largeStart: {
         bottomLeft: 16,
         bottomRight: 0,
         topLeft: 16,
-        topRight: 0,
+        topRight: 0
     },
     largeEnd: {
         bottomLeft: 0,
         bottomRight: 16,
         topLeft: 0,
-        topRight: 16,
+        topRight: 16
     },
     medium: {
         bottomLeft: 12,
         bottomRight: 12,
         topLeft: 12,
-        topRight: 12,
+        topRight: 12
     },
     small: {
         bottomLeft: 8,
         bottomRight: 8,
         topLeft: 8,
-        topRight: 8,
+        topRight: 8
     },
     extraSmall: {
         bottomLeft: 4,
         bottomRight: 4,
         topLeft: 4,
-        topRight: 4,
+        topRight: 4
     },
     extraSmallTop: {
         bottomLeft: 0,
         bottomRight: 0,
         topLeft: 4,
-        topRight: 4,
+        topRight: 4
     },
     none: {
         bottomLeft: 0,
         bottomRight: 0,
         topLeft: 0,
-        topRight: 0,
-    },
-});
+        topRight: 0
+    }
+})

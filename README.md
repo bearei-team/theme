@@ -13,9 +13,18 @@ The Bearei theme library is an npm package based on the Material Design guidelin
 ## Use
 
 ```typescript
-import {theme} from '@bearei/theme';
+import {theme} from '@bearei/theme'
 
-const {font, color, typography, elevation, createTransition, palette, shape, spacing} = theme({
-    scheme: 'light',
-});
+const {
+    font,
+    color,
+    typography,
+    elevation,
+    createTransition,
+    palette,
+    shape,
+    spacing
+} = theme({
+    scheme: 'light'
+})
 ```

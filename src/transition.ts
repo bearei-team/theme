@@ -1,12 +1,12 @@
 type Bezier = {
-    x0: number;
-    x1: number;
-    y0: number;
-    y1: number;
-};
+    x0: number
+    x1: number
+    y0: number
+    y1: number
+}
 
 export interface CreateTransitionOptions {
-    property?: string;
+    property?: string
     duration?:
         | 'short0'
         | 'short1'
@@ -24,7 +24,7 @@ export interface CreateTransitionOptions {
         | 'extraLong1'
         | 'extraLong2'
         | 'extraLong3'
-        | number;
+        | number
     easing?:
         | 'linear'
         | 'emphasized' // Begin and end on screen 500ms
@@ -35,17 +35,17 @@ export interface CreateTransitionOptions {
         | 'standardAccelerate' // Exit the screen 200ms
         | 'legacy'
         | 'legacyAccelerate'
-        | 'legacyDecelerate';
+        | 'legacyDecelerate'
 }
 
 export interface Transition {
-    bezier: Bezier;
-    duration: number;
+    bezier: Bezier
+    duration: number
 }
 
 export const createTransition = ({
     duration = 'medium1',
-    easing = 'standard',
+    easing = 'standard'
 }: CreateTransitionOptions): Transition => {
     const transitionDuration = {
         extraLong0: 700,
@@ -63,75 +63,75 @@ export const createTransition = ({
         short0: 50,
         short1: 100,
         short2: 150,
-        short3: 200,
-    };
+        short3: 200
+    }
 
     const transitionBezier = {
         emphasized: {
             x0: 0.2,
             x1: 0,
             y0: 0,
-            y1: 1,
+            y1: 1
         },
         emphasizedAccelerate: {
             x0: 0.3,
             x1: 0.8,
             y0: 0,
-            y1: 0.15,
+            y1: 0.15
         },
         emphasizedDecelerate: {
             x0: 0.05,
             x1: 0.1,
             y0: 0.7,
-            y1: 1,
+            y1: 1
         },
         standard: {
             x0: 0.2,
             x1: 0,
             y0: 0,
-            y1: 1,
+            y1: 1
         },
         standardAccelerate: {
             x0: 0.3,
             x1: 1,
             y0: 0,
-            y1: 1,
+            y1: 1
         },
         standardDecelerate: {
             x0: 0,
             x1: 0,
             y0: 0,
-            y1: 1,
+            y1: 1
         },
         legacy: {
             x0: 0.4,
             x1: 0.2,
             y0: 0,
-            y1: 1,
+            y1: 1
         },
         legacyAccelerate: {
             x0: 0.4,
             x1: 1,
             y0: 0,
-            y1: 1,
+            y1: 1
         },
         legacyDecelerate: {
             x0: 0,
             x1: 0.2,
             y0: 0,
-            y1: 1,
+            y1: 1
         },
         linear: {
             x0: 0,
             x1: 1,
             y0: 0,
-            y1: 1,
-        },
-    };
+            y1: 1
+        }
+    }
 
-    const bezier = transitionBezier[easing];
+    const bezier = transitionBezier[easing]
     const durationMillisecond =
-        typeof duration === 'number' ? duration : transitionDuration[duration];
+        typeof duration === 'number' ? duration : transitionDuration[duration]
 
-    return {bezier, duration: durationMillisecond};
-};
+    return {bezier, duration: durationMillisecond}
+}

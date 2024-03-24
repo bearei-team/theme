@@ -1,15 +1,15 @@
-import type {ThemeOptions} from './core';
+import type {ThemeOptions} from './core'
 
 interface Shadow {
-    blur: number;
-    elevation: number;
-    opacity: number;
-    spread: number;
-    x: number;
-    y: number;
+    blur: number
+    elevation: number
+    opacity: number
+    spread: number
+    x: number
+    y: number
 }
 
-type Level = Record<'shadow0' | 'shadow1', Shadow>;
+type Level = Record<'shadow0' | 'shadow1', Shadow>
 export interface Elevation {
     /**
      * level0
@@ -30,7 +30,7 @@ export interface Elevation {
      *      - Suggestion Chip (Flat)
      *      - Top App Bar
      */
-    level0: Level;
+    level0: Level
 
     /**
      * level1
@@ -47,7 +47,7 @@ export interface Elevation {
      *      - Slider (Handle)
      *      - Suggestion Chip (Elevated)
      */
-    level1: Level;
+    level1: Level
 
     /**
      * level2
@@ -60,7 +60,7 @@ export interface Elevation {
      *      - Rich Tooltip
      *      - Top App Bar (Scrolled)
      */
-    level2: Level;
+    level2: Level
 
     /**
      * level3
@@ -75,23 +75,25 @@ export interface Elevation {
      *      - Time Picker
      *      - Time Input
      */
-    level3: Level;
+    level3: Level
 
     /**
      * level4
      *      - not assigned as resting level
      */
-    level4: Level;
+    level4: Level
 
     /**
      * level5
      *      - not assigned as resting level
      */
-    level5: Level;
+    level5: Level
 }
 
-export type CreateElevationOptions = Required<Pick<ThemeOptions, 'scheme'>>;
-export const createElevation = ({scheme}: CreateElevationOptions): Elevation => {
+export type CreateElevationOptions = Required<Pick<ThemeOptions, 'scheme'>>
+export const createElevation = ({
+    scheme
+}: CreateElevationOptions): Elevation => {
     const elevation = {
         dark: {
             level0: {
@@ -101,7 +103,7 @@ export const createElevation = ({scheme}: CreateElevationOptions): Elevation => 
                     opacity: 0,
                     spread: 0,
                     x: 0,
-                    y: 0,
+                    y: 0
                 },
                 shadow1: {
                     blur: 0,
@@ -109,8 +111,8 @@ export const createElevation = ({scheme}: CreateElevationOptions): Elevation => 
                     opacity: 0,
                     spread: 0,
                     x: 0,
-                    y: 0,
-                },
+                    y: 0
+                }
             },
             level1: {
                 shadow0: {
@@ -119,7 +121,7 @@ export const createElevation = ({scheme}: CreateElevationOptions): Elevation => 
                     opacity: 0.3,
                     spread: 0,
                     x: 0,
-                    y: 1,
+                    y: 1
                 },
                 shadow1: {
                     blur: 3,
@@ -127,8 +129,8 @@ export const createElevation = ({scheme}: CreateElevationOptions): Elevation => 
                     opacity: 0.15,
                     spread: 1,
                     x: 0,
-                    y: 1,
-                },
+                    y: 1
+                }
             },
             level2: {
                 shadow0: {
@@ -137,7 +139,7 @@ export const createElevation = ({scheme}: CreateElevationOptions): Elevation => 
                     opacity: 0.3,
                     spread: 0,
                     x: 0,
-                    y: 1,
+                    y: 1
                 },
                 shadow1: {
                     blur: 6,
@@ -145,8 +147,8 @@ export const createElevation = ({scheme}: CreateElevationOptions): Elevation => 
                     opacity: 0.15,
                     spread: 2,
                     x: 0,
-                    y: 2,
-                },
+                    y: 2
+                }
             },
             level3: {
                 shadow0: {
@@ -155,7 +157,7 @@ export const createElevation = ({scheme}: CreateElevationOptions): Elevation => 
                     opacity: 0.3,
                     spread: 0,
                     x: 0,
-                    y: 1,
+                    y: 1
                 },
                 shadow1: {
                     blur: 8,
@@ -163,8 +165,8 @@ export const createElevation = ({scheme}: CreateElevationOptions): Elevation => 
                     opacity: 0.15,
                     spread: 3,
                     x: 0,
-                    y: 4,
-                },
+                    y: 4
+                }
             },
             level4: {
                 shadow0: {
@@ -173,7 +175,7 @@ export const createElevation = ({scheme}: CreateElevationOptions): Elevation => 
                     opacity: 0.3,
                     spread: 0,
                     x: 0,
-                    y: 2,
+                    y: 2
                 },
                 shadow1: {
                     blur: 10,
@@ -181,8 +183,8 @@ export const createElevation = ({scheme}: CreateElevationOptions): Elevation => 
                     opacity: 0.15,
                     spread: 4,
                     x: 0,
-                    y: 6,
-                },
+                    y: 6
+                }
             },
             level5: {
                 shadow0: {
@@ -191,7 +193,7 @@ export const createElevation = ({scheme}: CreateElevationOptions): Elevation => 
                     opacity: 0.3,
                     spread: 0,
                     x: 0,
-                    y: 4,
+                    y: 4
                 },
                 shadow1: {
                     blur: 12,
@@ -199,9 +201,9 @@ export const createElevation = ({scheme}: CreateElevationOptions): Elevation => 
                     opacity: 0.15,
                     spread: 6,
                     x: 0,
-                    y: 8,
-                },
-            },
+                    y: 8
+                }
+            }
         },
         light: {
             level0: {
@@ -211,7 +213,7 @@ export const createElevation = ({scheme}: CreateElevationOptions): Elevation => 
                     opacity: 0,
                     spread: 0,
                     x: 0,
-                    y: 0,
+                    y: 0
                 },
                 shadow1: {
                     blur: 0,
@@ -219,8 +221,8 @@ export const createElevation = ({scheme}: CreateElevationOptions): Elevation => 
                     opacity: 0,
                     spread: 0,
                     x: 0,
-                    y: 0,
-                },
+                    y: 0
+                }
             },
             level1: {
                 shadow0: {
@@ -229,7 +231,7 @@ export const createElevation = ({scheme}: CreateElevationOptions): Elevation => 
                     opacity: 0.15,
                     spread: 1,
                     x: 0,
-                    y: 1,
+                    y: 1
                 },
                 shadow1: {
                     blur: 2,
@@ -237,8 +239,8 @@ export const createElevation = ({scheme}: CreateElevationOptions): Elevation => 
                     opacity: 0.3,
                     spread: 0,
                     x: 0,
-                    y: 1,
-                },
+                    y: 1
+                }
             },
 
             level2: {
@@ -248,7 +250,7 @@ export const createElevation = ({scheme}: CreateElevationOptions): Elevation => 
                     opacity: 0.15,
                     spread: 2,
                     x: 0,
-                    y: 2,
+                    y: 2
                 },
                 shadow1: {
                     blur: 2,
@@ -256,8 +258,8 @@ export const createElevation = ({scheme}: CreateElevationOptions): Elevation => 
                     opacity: 0.3,
                     spread: 0,
                     x: 0,
-                    y: 1,
-                },
+                    y: 1
+                }
             },
             level3: {
                 shadow0: {
@@ -266,7 +268,7 @@ export const createElevation = ({scheme}: CreateElevationOptions): Elevation => 
                     opacity: 0.3,
                     spread: 0,
                     x: 0,
-                    y: 1,
+                    y: 1
                 },
                 shadow1: {
                     blur: 8,
@@ -274,8 +276,8 @@ export const createElevation = ({scheme}: CreateElevationOptions): Elevation => 
                     opacity: 0.15,
                     spread: 3,
                     x: 0,
-                    y: 4,
-                },
+                    y: 4
+                }
             },
             level4: {
                 shadow0: {
@@ -284,7 +286,7 @@ export const createElevation = ({scheme}: CreateElevationOptions): Elevation => 
                     opacity: 0.3,
                     spread: 0,
                     x: 0,
-                    y: 2,
+                    y: 2
                 },
                 shadow1: {
                     blur: 10,
@@ -292,8 +294,8 @@ export const createElevation = ({scheme}: CreateElevationOptions): Elevation => 
                     opacity: 0.15,
                     spread: 4,
                     x: 0,
-                    y: 6,
-                },
+                    y: 6
+                }
             },
             level5: {
                 shadow0: {
@@ -302,7 +304,7 @@ export const createElevation = ({scheme}: CreateElevationOptions): Elevation => 
                     opacity: 0.3,
                     spread: 0,
                     x: 0,
-                    y: 4,
+                    y: 4
                 },
                 shadow1: {
                     blur: 12,
@@ -310,11 +312,11 @@ export const createElevation = ({scheme}: CreateElevationOptions): Elevation => 
                     opacity: 0.15,
                     spread: 6,
                     x: 0,
-                    y: 8,
-                },
-            },
-        },
-    };
+                    y: 8
+                }
+            }
+        }
+    }
 
-    return elevation[scheme];
-};
+    return elevation[scheme]
+}

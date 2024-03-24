@@ -1,4 +1,4 @@
-import {ThemeOptions} from './core';
+import {ThemeOptions} from './core'
 
 type Primary =
     | 'primary0'
@@ -13,7 +13,7 @@ type Primary =
     | 'primary90'
     | 'primary95'
     | 'primary98'
-    | 'primary100';
+    | 'primary100'
 
 type Secondary =
     | 'secondary0'
@@ -28,7 +28,7 @@ type Secondary =
     | 'secondary90'
     | 'secondary95'
     | 'secondary98'
-    | 'secondary100';
+    | 'secondary100'
 
 type Tertiary =
     | 'tertiary0'
@@ -43,7 +43,7 @@ type Tertiary =
     | 'tertiary90'
     | 'tertiary95'
     | 'tertiary98'
-    | 'tertiary100';
+    | 'tertiary100'
 
 type Error =
     | 'error0'
@@ -58,7 +58,7 @@ type Error =
     | 'error90'
     | 'error95'
     | 'error98'
-    | 'error100';
+    | 'error100'
 
 type Neutral =
     | 'neutral0'
@@ -83,7 +83,7 @@ type Neutral =
     | 'neutral95'
     | 'neutral96'
     | 'neutral98'
-    | 'neutral100';
+    | 'neutral100'
 
 type NeutralVariant =
     | 'neutralVariant0'
@@ -98,31 +98,31 @@ type NeutralVariant =
     | 'neutralVariant90'
     | 'neutralVariant95'
     | 'neutralVariant98'
-    | 'neutralVariant100';
+    | 'neutralVariant100'
 
-export type CreateColorOptions = Required<Pick<ThemeOptions, 'color'>>;
+export type CreateColorOptions = Required<Pick<ThemeOptions, 'color'>>
 export interface Color {
-    convertHexToRGBA: (color: string, opacity: number) => string;
-    error: Record<Error, string>;
-    neutral: Record<Neutral, string>;
-    neutralVariant: Record<NeutralVariant, string>;
-    primary: Record<Primary, string>;
-    secondary: Record<Secondary, string>;
-    source: string;
-    tertiary: Record<Tertiary, string>;
+    convertHexToRGBA: (color: string, opacity: number) => string
+    error: Record<Error, string>
+    neutral: Record<Neutral, string>
+    neutralVariant: Record<NeutralVariant, string>
+    primary: Record<Primary, string>
+    secondary: Record<Secondary, string>
+    source: string
+    tertiary: Record<Tertiary, string>
 }
 
 const convertHexToRGBA = (color: string, opacity = 1) => {
     if (!/^#([A-Fa-f0-9]{2}){3}$/.test(color)) {
-        throw new Error("Invalid color format. Expected '#RRGGBB'.");
+        throw new Error("Invalid color format. Expected '#RRGGBB'.")
     }
 
-    const blue = parseInt(color.slice(5, 7), 16);
-    const green = parseInt(color.slice(3, 5), 16);
-    const red = parseInt(color.slice(1, 3), 16);
+    const blue = parseInt(color.slice(5, 7), 16)
+    const green = parseInt(color.slice(3, 5), 16)
+    const red = parseInt(color.slice(1, 3), 16)
 
-    return `rgba(${red}, ${green}, ${blue}, ${opacity})`;
-};
+    return `rgba(${red}, ${green}, ${blue}, ${opacity})`
+}
 
 export const createColor = ({color}: CreateColorOptions): Color => {
     const themeColor = {
@@ -140,7 +140,7 @@ export const createColor = ({color}: CreateColorOptions): Color => {
                 error90: '#FFDAD6',
                 error95: '#FFEDEA',
                 error98: '#FFF8F7',
-                error100: '#FFFFFF',
+                error100: '#FFFFFF'
             },
             neutral: {
                 neutral0: '#000000',
@@ -165,7 +165,7 @@ export const createColor = ({color}: CreateColorOptions): Color => {
                 neutral95: '#EFF1F2',
                 neutral96: '#F2F4F5',
                 neutral98: '#F8FAFB',
-                neutral100: '#FFFFFF',
+                neutral100: '#FFFFFF'
             },
             neutralVariant: {
                 neutralVariant0: '#000000',
@@ -180,7 +180,7 @@ export const createColor = ({color}: CreateColorOptions): Color => {
                 neutralVariant90: '#DBE4E7',
                 neutralVariant95: '#E9F2F5',
                 neutralVariant98: '#F2FBFE',
-                neutralVariant100: '#FFFFFF',
+                neutralVariant100: '#FFFFFF'
             },
             primary: {
                 primary0: '#000000',
@@ -195,7 +195,7 @@ export const createColor = ({color}: CreateColorOptions): Color => {
                 primary90: '#ACECFF',
                 primary95: '#D8F6FF',
                 primary98: '#F0FBFF',
-                primary100: '#FFFFFF',
+                primary100: '#FFFFFF'
             },
             secondary: {
                 secondary0: '#000000',
@@ -210,7 +210,7 @@ export const createColor = ({color}: CreateColorOptions): Color => {
                 secondary90: '#CEE7EF',
                 secondary95: '#DCF5FD',
                 secondary98: '#F0FBFF',
-                secondary100: '#FFFFFF',
+                secondary100: '#FFFFFF'
             },
             source: '#88C0D0',
             tertiary: {
@@ -226,10 +226,10 @@ export const createColor = ({color}: CreateColorOptions): Color => {
                 tertiary90: '#DDE1FF',
                 tertiary95: '#F0EFFF',
                 tertiary98: '#FBF8FF',
-                tertiary100: '#FFFFFF',
-            },
-        },
-    };
+                tertiary100: '#FFFFFF'
+            }
+        }
+    }
 
-    return {...themeColor[color], convertHexToRGBA};
-};
+    return {...themeColor[color], convertHexToRGBA}
+}

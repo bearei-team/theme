@@ -1,10 +1,10 @@
 export interface Spacing {
-    extraLarge: number;
-    extraSmall: number;
-    large: number;
-    medium: number;
-    none: number;
-    small: number;
+    extraLarge: number
+    extraSmall: number
+    large: number
+    medium: number
+    none: number
+    small: number
 }
 
 export const createSpacing = (): Spacing => ({
@@ -13,5 +13,5 @@ export const createSpacing = (): Spacing => ({
     large: 24,
     medium: 16,
     none: 0,
-    small: 8,
-});
+    small: 8
+})
